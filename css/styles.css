@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
 
-body {
+* {
   font-family: 'Comic Neue', cursive;
 }
 
@@ -19,14 +19,11 @@ header {
 
 .header-search-icon {
   margin-left: 3rem;
-  margin-top: 1.7rem;
+  margin-top: 1.4rem;
+  font-size: 1.5rem;
 }
 
 main {
-  /* display: flex;
-  justify-content: center; */
-  /* flex-direction: column; */
-  /* text-align: center; */
   background-color: #C9F3E1;
   color: #00203F;
 }
@@ -56,20 +53,42 @@ main {
 
 .main-first-btn {
   margin-bottom: 2rem;
-  border-radius: 15px;
-  padding: 30px 136px;
 }
 
-/* .main-btn-search-icon {
+.main-first-btn button {
+  display: flex;
+  font-size: 22px;
+}
 
-} */
+.main-btn-search-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
 
 .main-second-btn {
   margin-bottom: 3rem;
 }
 
+.main-second-btn button {
+  font-size: 22px;
+}
+
+.main-first-btn button,
+.main-second-btn button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #00203F;
+  color: #ffffff;
+}
+
 footer {
-  display: flex;
   background-color: #00203f;
   color: #ffffff;
+  padding: 1.2rem 0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.5rem;
 }
