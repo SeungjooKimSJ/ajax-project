@@ -77,9 +77,27 @@ main {
 .main-second-btn button {
   padding: 10px 20px;
   border-radius: 15px;
+  border: none;
   background-color: #00203F;
   color: #ffffff;
+  transition: background-color 0.7s ease-in-out;
 }
+
+.main-first-btn button:hover,
+.main-second-btn button:hover {
+  cursor: pointer;
+  background-color: rgb(88, 119, 204);
+}
+
+.main-first-btn button:focus,
+.main-second-btn button:focus {
+  outline: none;
+}
+
+/* .main-first-btn button:active,
+.main-second-btn button:active {
+
+} */
 
 footer {
   background-color: #00203f;
@@ -91,4 +109,9 @@ footer {
   display: flex;
   justify-content: space-around;
   font-size: 2.5rem;
+  color: #C9F3E1;
+}
+
+.fas:first-child {
+  color: #ffffff;
 }
