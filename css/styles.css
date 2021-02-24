@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
 header {
   display: flex;
   justify-content: left;
   padding-left: 3rem;
   background-color: #00203F;
   color: #ffffff;
+}
+
+.header-h2 {
+  margin-right: 3rem;
+}
+
+.header-search-icon {
+  margin-left: 3rem;
+  margin-top: 1.7rem;
 }
 
 main {
@@ -22,10 +38,38 @@ main {
 }
 
 .greeting {
-  padding-right: 7.3rem;
+  margin-right: 8.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .main-img {
   width: 95%;
   border-radius: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.main-two-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-first-btn {
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  padding: 30px 136px;
+}
+
+/* .main-btn-search-icon {
+
+} */
+
+.main-second-btn {
+  margin-bottom: 3rem;
+}
+
+footer {
+  display: flex;
+  background-color: #00203f;
+  color: #ffffff;
 }
