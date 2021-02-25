@@ -22,6 +22,7 @@
   margin-left: 3rem;
   margin-top: 1.4rem;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 main {
@@ -135,6 +136,7 @@ footer {
   margin: 1rem 0;
   padding: 10px 30px;
   border-radius: 15px;
+  border-style: none;
   cursor: pointer;
 }
 
