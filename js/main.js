@@ -1,35 +1,25 @@
-// var $formSearch = document.createElement('form');
-// var $label = document.createElement('label');
-// var $labelInput = document.createElement('input');
+var $homePage = document.querySelector('.home-page-view');
+var $mainH2AndImg = document.querySelector('.main-h2-and-img-view');
+var $mainTwoBtns = document.querySelector('.main-two-btns-view');
+var $footerHomeIcons = document.querySelector('.footer-home-icons-view');
 
-// $labelInput.setAttribute('type', 'search');
-// $labelInput.setAttribute('placeholder', 'search bucket places');
-
-// var $header = document.querySelector('header');
-// $formSearch.appendChild($label);
-// $header.appendChild($formSearch);
-
-// var $greeting = document.querySelector('.greeting');
-// $greeting.textContent = 'Where are your places';
-
-
-var $searchIcon = document.querySelector('.header-search-icon');
-var $mainFirstBtn = document.querySelector('.main-first-btn');
+var $searchPage = document.querySelector('.search-page-view');
+var $searchH2AndImg = document.querySelector('.search-h2-and-img-view');
+var $footerSearchIcons = document.querySelector('.footer-search-icons-view');
 
 function clickSearch(event) {
-  var $greeting = document.querySelector('.greeting');
-  $greeting.textContent = 'Where are your places';
-  $greeting.setAttribute('id', 'new-greeting');
+  $homePage.className = 'home-page-view hidden';
+  $mainH2AndImg.className = 'main-h2-and-img-view hidden';
+  $mainTwoBtns.className = 'main-two-btns-view hidden';
+  $footerHomeIcons.className = 'footer-home-icons-view hidden';
 
+  $searchPage.className = 'search-page-view';
+  $searchH2AndImg.className = 'search-h2-and-img-view';
+  $footerSearchIcons.className = 'footer-search-icons-view'
 };
 
-$searchIcon.addEventListener('click', clickSearch);
+var $headerSearchIcon = document.querySelector('.header-search-icon');
+var $mainFirstBtn = document.querySelector('.main-first-btn');
+
+$headerSearchIcon.addEventListener('click', clickSearch);
 $mainFirstBtn.addEventListener('click', clickSearch);
-
-
-// function searchPlaces(event) {
-
-// };
-
-// $searchIcon.addEventListener('click', searchPlaces);
-// $mainFirstBtn.addEventListener('click', searchPlaces);

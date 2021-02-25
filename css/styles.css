@@ -4,6 +4,8 @@
   font-family: 'Comic Neue', cursive;
 }
 
+/* Home Page styling !!!!!!!!!!! */
+
 .home-page-view {
   display: flex;
   justify-content: left;
@@ -104,7 +106,7 @@ footer {
   padding: 1.2rem 0;
 }
 
-.footer-icons {
+.footer-home-icons-view {
   display: flex;
   justify-content: space-around;
   font-size: 2.5rem;
@@ -115,29 +117,75 @@ footer {
   color: #ffffff;
 }
 
-/* .hidden {
-  display: none;
-} */
+/* Search Page styling !!!!!!!!!!! */
 
-.search-page-view.hidden {
+.search-page-view {
   display: flex;
   justify-content: center;
   background-color: #00203F;
   color: #ffffff;
 }
 
-#input-search {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  padding: 5px 0;
-  border-radius: 15px;
+.search-bar {
+  position: relative;
 }
 
-/* #input-search::placeholder {
-  justify-content: center;
+#input-search {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  padding: 10px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.fa-search-inside {
+  color: #00203F;
+  font-size: 1.1rem;
+  position: absolute;
+  right: 1.3rem;
+  top: 2rem;
+  cursor: pointer;
+}
+
+#input-search::placeholder {
+  color: #00203F;
+}
+
+.search-h2-and-img-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* #greeting-search {
+  NEED TO MAKE H2 MOVES TO THE LEFT!!!
 } */
 
-#new-greeting {
-  padding-left: 7.3rem;
-  width: 100%;
+.search-img-1 {
+  margin-bottom: 1.5rem;
+}
+
+.search-img-2 {
+  margin-bottom: 3.5rem;
+}
+
+.search-img-1,
+.search-img-2 {
+  width: 95%;
+  border-radius: 20px;
+}
+
+.footer-search-icons-view {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.5rem;
+  color: #C9F3E1;
+}
+
+/* .fas:nth-child(even) {
+  color: #ffffff; If I turn this on, search-icon at the top is gone
+} */
+
+.hidden {
+  display: none;
 }
