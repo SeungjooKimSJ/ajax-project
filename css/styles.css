@@ -136,3 +136,8 @@ footer {
 /* #input-search::placeholder {
   justify-content: center;
 } */
+
+#new-greeting {
+  padding-left: 7.3rem;
+  width: 100%;
+}

@@ -13,16 +13,18 @@
 // $greeting.textContent = 'Where are your places';
 
 
-// var $searchIcon = document.querySelector('.header-search-icon');
-// var $mainFirstBtn = document.querySelector('.main-first-btn');
+var $searchIcon = document.querySelector('.header-search-icon');
+var $mainFirstBtn = document.querySelector('.main-first-btn');
 
-// function clickSearch(event) {
-//   var $greeting = document.querySelector('.greeting');
-//   $greeting.textContent = 'Where are your places';
-// };
+function clickSearch(event) {
+  var $greeting = document.querySelector('.greeting');
+  $greeting.textContent = 'Where are your places';
+  $greeting.setAttribute('id', 'new-greeting');
 
-// $searchIcon.addEventListener('click', clickSearch);
-// $mainFirstBtn.addEventListener('click', clickSearch);
+};
+
+$searchIcon.addEventListener('click', clickSearch);
+$mainFirstBtn.addEventListener('click', clickSearch);
 
 
 // function searchPlaces(event) {
