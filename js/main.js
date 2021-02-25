@@ -23,3 +23,16 @@ var $mainFirstBtn = document.querySelector('.main-first-btn');
 
 $headerSearchIcon.addEventListener('click', clickSearch);
 $mainFirstBtn.addEventListener('click', clickSearch);
+
+// function getPlacesData(query) {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open('GET', 'https://api.unsplash.com/search/photos/');
+//   xhr.responseType = 'json';
+//   xhr.addEventListener('load', function () {
+//     console.log(xhr.status);
+//     console.log(xhr.response);
+//   });
+//   xhr.send();
+// }
+
+// getPlacesData('California');
