@@ -40,6 +40,18 @@ function getPlacesData(query) {
 getPlacesData();
 
 
+function retrieveResult(event) {
+  // getPlacesData();
+  // console.log(getPlacesData);
+
+  // event.preventDefault();
+};
+
+// var $formSearchBar = document.querySelector('search-bar');
+// var $searchIconBtn = document.querySelector('.search-btn');
+
+// $formSearchBar.addEventListener('submit', retrieveResult);
+
 
 // function renderAlbum(something) {
 //   var divDom = document.createElement('div');

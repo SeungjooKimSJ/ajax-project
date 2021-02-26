@@ -140,14 +140,22 @@ footer {
   cursor: pointer;
 }
 
-.fa-search-inside {
-  color: #00203F;
+/* .fa-search-inside { */
+.search-icon-btn {
+  /* color: #00203F; */
+  color: red;
+  background-color: burlywood;
   font-size: 1.1rem;
   position: absolute;
-  right: 1.3rem;
-  top: 1.9rem;
+  right: 1.5rem;
+  top: 1.8rem;
+  border: none;
   cursor: pointer;
 }
+
+/* .fa-search-inside {
+  color: #00203F;
+} */
 
 #input-search::placeholder {
   color: #00203F;
