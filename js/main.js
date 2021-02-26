@@ -24,9 +24,12 @@ var $mainFirstBtn = document.querySelector('.main-first-btn');
 $headerSearchIcon.addEventListener('click', clickSearch);
 $mainFirstBtn.addEventListener('click', clickSearch);
 
+
 function getPlacesData(query) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.unsplash.com/search/photos/');
+  var url = 'https://api.unsplash.com/search/photos/?client_id=FOyQYe0Rid3QLEMMV75PxVbRJNk-AowlsdW9TTbeo_8&query=' + query;
+  console.log('URL for request:', url);
+  xhr.open('GET', url);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     console.log(xhr.status);
@@ -34,5 +37,16 @@ function getPlacesData(query) {
   });
   xhr.send();
 }
+getPlacesData();
 
-getPlacesData('California');
+
+
+// function renderAlbum(something) {
+//   var divDom = document.createElement('div');
+//   var pictureDom = document.createAttribute('img');
+//   pictureDom.setAttribute('src', something.url);
+
+//   var labelName = document.createElement('label');
+
+
+// }
