@@ -37,28 +37,57 @@ function getPlacesData(query) {
   });
   xhr.send();
 }
-getPlacesData();
+getPlacesData('');
 
 
 function retrieveResult(event) {
-  // getPlacesData();
-  // console.log(getPlacesData);
+  event.preventDefault();
 
-  // event.preventDefault();
+  getPlacesData();
+  console.log(getPlacesData);
+
+  var resultsData = {
+    name: results.user.first_name.value + results.user.last_name.value,
+    url: results.user.urls.raw.value
+  };
+
+  var $divDom = document.createElement('div');
+  $divDom.setAttribute('class', 'search-result');
+  var $searchResultH2 = document.createElement('h2');
+  $searchResultH2.setAttribute('class', 'search-result-h2');
+  $searchResultH2.textContent = 'Show search keyword';
+
+  for (var i = 0; i < resultsData.length; i++) {
+    var searchDomTree = renderSearchResultPage(resultsData[i]);
+
+  }
+
+
+
+
+  $searchIconBtn.reset();
 };
 
 // var $formSearchBar = document.querySelector('search-bar');
-// var $searchIconBtn = document.querySelector('.search-btn');
+var $searchIconBtn = document.querySelector('.search-btn');
 
-// $formSearchBar.addEventListener('submit', retrieveResult);
-
-
-// function renderAlbum(something) {
-//   var divDom = document.createElement('div');
-//   var pictureDom = document.createAttribute('img');
-//   pictureDom.setAttribute('src', something.url);
-
-//   var labelName = document.createElement('label');
+$searchIconBtn.addEventListener('submit', retrieveResult);
 
 
-// }
+function renderSearchResultPage(resultsData) {
+  var $newDiv = document.createElement('div');
+  $newDiv.setAttribute('class', 'new-search-result');
+
+  var $photographerNameH2 = document.createElement('h2');
+  $photographerNameH2.setAttribute('class', 'photographer-name-h2');
+  $photographerNameH2.textContent = resultsData.name;
+
+  var $searchedImg = document.createElement('img');
+  $searchedImg.setAttribute('src', resultsData.url);
+
+  var $addIconBtn = document.createElement('button');
+  $addIconBtn.setAttribute('class', 'add-icon-btn');
+
+
+
+}
