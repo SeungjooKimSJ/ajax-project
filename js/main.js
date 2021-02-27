@@ -28,66 +28,97 @@ $mainFirstBtn.addEventListener('click', clickSearch);
 function getPlacesData(query) {
   var xhr = new XMLHttpRequest();
   var url = 'https://api.unsplash.com/search/photos/?client_id=FOyQYe0Rid3QLEMMV75PxVbRJNk-AowlsdW9TTbeo_8&query=' + query;
-  console.log('URL for request:', url);
   xhr.open('GET', url);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     console.log(xhr.status);
     console.log(xhr.response);
+
+    // console.log(xhr.response.results[0].user);
+    // console.log(xhr.response.results[0].urls.raw);
+
+    var dataResult = xhr.response.results;
+
+    for (var j = 0; j < dataResult.length; j++) {
+      // var userData = dataResult.results[j];
+      var userData = dataResult[j];
+
+      var resultPageDom = renderSearchResultPage(userData);
+
+      $main.appendChild(resultPageDom);
+    }
+
   });
   xhr.send();
-}
-getPlacesData('');
+};
+getPlacesData();
+
+
+var $main = document.querySelector('main');
+
+  var $divDom = document.createElement('div');
+  $divDom.setAttribute('class', 'search-result-view hidden');
+  var $searchResultH2 = document.createElement('h2');
+  $searchResultH2.setAttribute('class', 'search-result-h2');
+  $searchResultH2.textContent = 'Show search keyword';
+
+  var $ul = document.createElement('ul');
+  $ul.setAttribute('class', 'ul-view hidden')
+  var $li = document.createElement('li');
+  $li.setAttribute('class', 'search-result-listed');
+
+  $main.append($divDom, $ul);
+  $divDom.appendChild($searchResultH2);
+  $ul.appendChild($li)
 
 
 function retrieveResult(event) {
   event.preventDefault();
 
   getPlacesData();
-  console.log(getPlacesData);
 
-  var resultsData = {
-    name: results.user.first_name.value + results.user.last_name.value,
-    url: results.user.urls.raw.value
-  };
+  $divDom.className = 'search-result-view';
+  $ul.className = 'ul-view';
 
-  var $divDom = document.createElement('div');
-  $divDom.setAttribute('class', 'search-result');
-  var $searchResultH2 = document.createElement('h2');
-  $searchResultH2.setAttribute('class', 'search-result-h2');
-  $searchResultH2.textContent = 'Show search keyword';
+  $homePage.className = 'home-page-view hidden';
+  $mainH2AndImg.className = 'main-h2-and-img-view hidden';
+  $mainTwoBtns.className = 'main-two-btns-view hidden';
+  $footerHomeIcons.className = 'footer-home-icons-view hidden';
 
-  for (var i = 0; i < resultsData.length; i++) {
-    var searchDomTree = renderSearchResultPage(resultsData[i]);
+  $searchPage.className = 'search-page-view hidden';
+  $searchH2AndImg.className = 'search-h2-and-img-view hidden';
+  $footerSearchIcons.className = 'footer-search-icons-view hidden';
 
+
+
+  for (var i = 0; i < userData.length; i++) {
+    var searchDomTree = renderSearchResultPage(userData[i]);
+    $li.appendChild(searchDomTree);
   }
-
-
-
 
   $searchIconBtn.reset();
 };
 
-// var $formSearchBar = document.querySelector('search-bar');
-var $searchIconBtn = document.querySelector('.search-btn');
+var $searchIconBtn = document.querySelector('.search-icon-btn');
 
 $searchIconBtn.addEventListener('submit', retrieveResult);
 
 
-function renderSearchResultPage(resultsData) {
+function renderSearchResultPage(dataResult) {
   var $newDiv = document.createElement('div');
   $newDiv.setAttribute('class', 'new-search-result');
 
   var $photographerNameH2 = document.createElement('h2');
   $photographerNameH2.setAttribute('class', 'photographer-name-h2');
-  $photographerNameH2.textContent = resultsData.name;
+  // $photographerNameH2.textContent = userData.user.first_name;
 
   var $searchedImg = document.createElement('img');
-  $searchedImg.setAttribute('src', resultsData.url);
+  // $searchedImg.setAttribute('src', userData.user.urls.raw);
 
   var $addIconBtn = document.createElement('button');
   $addIconBtn.setAttribute('class', 'add-icon-btn');
 
+  $newDiv.append($photographerNameH2, $searchedImg, $addIconBtn);
 
-
-}
+  return $newDiv;
+};
