@@ -34,86 +34,78 @@ function getPlacesData(query) {
     console.log(xhr.status);
     console.log(xhr.response);
 
-    // console.log(xhr.response.results[0].user);
-    // console.log(xhr.response.results[0].urls.raw);
-
     var dataResult = xhr.response.results;
 
-    for (var j = 0; j < dataResult.length; j++) {
-      // var userData = dataResult.results[j];
-      var userData = dataResult[j];
+    $divDom.className = 'search-result-view';
+    $ul.className = 'ul-view';
 
-      var resultPageDom = renderSearchResultPage(userData);
+    $homePage.className = 'home-page-view hidden';
+    $mainH2AndImg.className = 'main-h2-and-img-view hidden';
+    $mainTwoBtns.className = 'main-two-btns-view hidden';
+    $footerHomeIcons.className = 'footer-home-icons-view hidden';
 
-      $main.appendChild(resultPageDom);
+    $searchPage.className = 'search-page-view hidden';
+    $searchH2AndImg.className = 'search-h2-and-img-view hidden';
+    $footerSearchIcons.className = 'footer-search-icons-view hidden';
+
+    for (var i = 0; i < dataResult.length; i++) {
+      var individualResult = dataResult[i];
+
+      var url = individualResult.urls.raw;
+      var name = individualResult.user.name;
+
+      var domTree = renderSearchResultPage(name, url);
+      $main.appendChild(domTree);
+
     }
-
   });
   xhr.send();
 };
-getPlacesData();
 
 
 var $main = document.querySelector('main');
+var $form = document.querySelector('.search-bar');
 
-  var $divDom = document.createElement('div');
-  $divDom.setAttribute('class', 'search-result-view hidden');
-  var $searchResultH2 = document.createElement('h2');
-  $searchResultH2.setAttribute('class', 'search-result-h2');
-  $searchResultH2.textContent = 'Show search keyword';
+var $divDom = document.createElement('div');
+$divDom.setAttribute('class', 'search-result-view hidden');
+var $searchResultH2 = document.createElement('h2');
+$searchResultH2.setAttribute('class', 'search-result-h2');
 
-  var $ul = document.createElement('ul');
-  $ul.setAttribute('class', 'ul-view hidden')
-  var $li = document.createElement('li');
-  $li.setAttribute('class', 'search-result-listed');
+var $ul = document.createElement('ul');
+$ul.setAttribute('class', 'ul-view hidden');
+var $li = document.createElement('li');
+$li.setAttribute('class', 'search-result-listed');
 
-  $main.append($divDom, $ul);
-  $divDom.appendChild($searchResultH2);
-  $ul.appendChild($li)
+$main.append($divDom, $ul);
+$divDom.appendChild($searchResultH2);
+$ul.appendChild($li)
 
 
 function retrieveResult(event) {
   event.preventDefault();
 
-  getPlacesData();
+  var searchKeyword = $form.elements.search.value;
+  $searchResultH2.textContent = searchKeyword;
 
-  $divDom.className = 'search-result-view';
-  $ul.className = 'ul-view';
-
-  $homePage.className = 'home-page-view hidden';
-  $mainH2AndImg.className = 'main-h2-and-img-view hidden';
-  $mainTwoBtns.className = 'main-two-btns-view hidden';
-  $footerHomeIcons.className = 'footer-home-icons-view hidden';
-
-  $searchPage.className = 'search-page-view hidden';
-  $searchH2AndImg.className = 'search-h2-and-img-view hidden';
-  $footerSearchIcons.className = 'footer-search-icons-view hidden';
+  getPlacesData(searchKeyword);
 
 
-
-  for (var i = 0; i < userData.length; i++) {
-    var searchDomTree = renderSearchResultPage(userData[i]);
-    $li.appendChild(searchDomTree);
-  }
-
-  $searchIconBtn.reset();
+  $form.reset();
 };
 
-var $searchIconBtn = document.querySelector('.search-icon-btn');
-
-$searchIconBtn.addEventListener('submit', retrieveResult);
+$form.addEventListener('submit', retrieveResult);
 
 
-function renderSearchResultPage(dataResult) {
+function renderSearchResultPage(name, url) {
   var $newDiv = document.createElement('div');
   $newDiv.setAttribute('class', 'new-search-result');
 
   var $photographerNameH2 = document.createElement('h2');
   $photographerNameH2.setAttribute('class', 'photographer-name-h2');
-  // $photographerNameH2.textContent = userData.user.first_name;
+  $photographerNameH2.textContent = name;
 
   var $searchedImg = document.createElement('img');
-  // $searchedImg.setAttribute('src', userData.user.urls.raw);
+  $searchedImg.setAttribute('src', url);
 
   var $addIconBtn = document.createElement('button');
   $addIconBtn.setAttribute('class', 'add-icon-btn');
