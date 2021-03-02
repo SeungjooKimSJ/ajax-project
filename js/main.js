@@ -43,10 +43,10 @@ function getPlacesData(query) {
     $mainH2AndImg.className = 'main-h2-and-img-view hidden';
     $mainTwoBtns.className = 'main-two-btns-view hidden';
     $footerHomeIcons.className = 'footer-home-icons-view hidden';
-
-    $searchPage.className = 'search-page-view hidden';
     $searchH2AndImg.className = 'search-h2-and-img-view hidden';
-    $footerSearchIcons.className = 'footer-search-icons-view hidden';
+
+    $searchPage.className = 'search-page-view';
+    $footerSearchIcons.className = 'footer-search-icons-view';
 
     for (var i = 0; i < dataResult.length; i++) {
       var individualResult = dataResult[i];
