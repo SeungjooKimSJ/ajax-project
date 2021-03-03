@@ -143,8 +143,8 @@ footer {
 /* .fa-search-inside { */
 .search-icon-btn {
   /* color: #00203F; */
-  color: red;
-  background-color: burlywood;
+  /* color: red; */
+  background-color: orange;
   font-size: 1.1rem;
   position: absolute;
   right: 1.5rem;
@@ -152,6 +152,10 @@ footer {
   border: none;
   cursor: pointer;
 }
+
+/* .fas fa-search fa-search-inside {
+  background-color: red;
+} */
 
 /* .fa-search-inside {
   color: #00203F;
@@ -217,9 +221,13 @@ footer {
   align-items: center;
 }
 
-.photographer-name-h2 {
+/* .photographer-name-h2 {
   margin-right: 7.5rem;
   padding-right: 7.5rem;
+} */
+
+.h2-and-btn {
+  ;
 }
 
 .searched-image {
@@ -233,8 +241,8 @@ footer {
   font-size: 2rem;
   border: none;
   cursor: pointer;
-  margin-left: 76%;
-  margin-bottom: 2rem;
+  /* margin-left: 76%;
+  margin-bottom: 2rem; */
   border-radius: 10px;
   padding: 5px 20px;
   transition: background-color 0.7s ease-in-out;

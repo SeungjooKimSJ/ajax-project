@@ -100,8 +100,8 @@ function renderSearchResultPage(name, url) {
   var $newDiv = document.createElement('div');
   $newDiv.setAttribute('class', 'new-search-result');
 
-  // var $nameH2AndIconBtn = document.createElement('div');
-  // $nameH2AndIconBtn.setAttribute('class', 'h2-and-btn');
+  var $nameH2AndIconBtn = document.createElement('div');
+  $nameH2AndIconBtn.setAttribute('class', 'h2-and-btn');
 
   var $photographerNameH2 = document.createElement('h2');
   $photographerNameH2.setAttribute('class', 'photographer-name-h2');
@@ -117,9 +117,9 @@ function renderSearchResultPage(name, url) {
   var $plusIcon = document.createElement('i');
   $plusIcon.setAttribute('class', 'fas fa-plus');
 
-  $newDiv.append($photographerNameH2, $searchedImg, $addIconBtn);
-  // $newDiv.append($nameH2AndIconBtn, $searchedImg);
-  // $nameH2AndIconBtn.append($photographerNameH2, $addIconBtn);
+  // $newDiv.append($photographerNameH2, $searchedImg, $addIconBtn);
+  $newDiv.append($nameH2AndIconBtn, $searchedImg);
+  $nameH2AndIconBtn.append($photographerNameH2, $addIconBtn);
   $addIconBtn.appendChild($plusIcon);
 
   return $newDiv;
