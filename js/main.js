@@ -55,7 +55,7 @@ function getPlacesData(query) {
       var name = individualResult.user.name;
 
       var domTree = renderSearchResultPage(name, url);
-      $main.appendChild(domTree);
+      $li.appendChild(domTree);
 
     }
   });
