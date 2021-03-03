@@ -114,7 +114,7 @@ footer {
   color: #C9F3E1;
 }
 
-.fas:first-child {
+.footer-home-icons-view .fas:first-child {
   color: #ffffff;
 }
 
@@ -140,11 +140,8 @@ footer {
   cursor: pointer;
 }
 
-/* .fa-search-inside { */
 .search-icon-btn {
-  /* color: #00203F; */
-  /* color: red; */
-  background-color: orange;
+  background-color: transparent;
   font-size: 1.1rem;
   position: absolute;
   right: 1.5rem;
@@ -152,14 +149,6 @@ footer {
   border: none;
   cursor: pointer;
 }
-
-/* .fas fa-search fa-search-inside {
-  background-color: red;
-} */
-
-/* .fa-search-inside {
-  color: #00203F;
-} */
 
 #input-search::placeholder {
   color: #00203F;
@@ -196,9 +185,9 @@ footer {
   color: #C9F3E1;
 }
 
-/* .fas:nth-child(even) {
-  color: #ffffff; If I turn this on, search-icon at the top is gone
-} */
+.footer-search-icons-view > .fas:nth-child(even) {
+  color: #ffffff;
+}
 
 .hidden {
   display: none;
@@ -244,7 +233,7 @@ footer {
   /* margin-left: 76%;
   margin-bottom: 2rem; */
   border-radius: 10px;
-  padding: 5px 20px;
+  padding: 5px 15px;
   transition: background-color 0.7s ease-in-out;
 }
 
@@ -255,6 +244,14 @@ footer {
 
 .add-icon-btn:focus {
   outline: none;
+}
+
+.add-icon-btn > .fas {
+  color: #C9F3E1;
+}
+
+.add-icon-btn > .fas:hover {
+  color: #ffffff;
 }
 
 /* .h2-and-btn {
