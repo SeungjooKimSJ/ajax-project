@@ -56,7 +56,6 @@ function getPlacesData(query) {
 
       var domTree = renderSearchResultPage(name, url);
       $li.appendChild(domTree);
-
     }
   });
   xhr.send();
@@ -89,7 +88,6 @@ function retrieveResult(event) {
 
   getPlacesData(searchKeyword);
 
-
   $form.reset();
 };
 
@@ -117,7 +115,6 @@ function renderSearchResultPage(name, url) {
   var $plusIcon = document.createElement('i');
   $plusIcon.setAttribute('class', 'fas fa-plus');
 
-  // $newDiv.append($photographerNameH2, $searchedImg, $addIconBtn);
   $newDiv.append($nameH2AndIconBtn, $searchedImg);
   $nameH2AndIconBtn.append($photographerNameH2, $addIconBtn);
   $addIconBtn.appendChild($plusIcon);
