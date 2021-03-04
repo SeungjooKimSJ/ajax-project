@@ -269,15 +269,15 @@ footer {
   width: 85vw;
   height: 50vh;
   top: 20%;
-  left: 10%;
+  left: 8%;
 }
 
 .modal-form {
   margin: 20px auto;
   padding: 5px 10px 10px;
   max-width: 560px;
-  background-color: rgb(240, 240, 240);
-  border: 1px solid rgb(189, 189, 189);
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .modal-h2-and-btn {
@@ -285,6 +285,26 @@ footer {
   align-items: center;
   width: 100%;
   justify-content: space-between;
+}
+
+.no-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.no-btn > .fas {
+  color: #00203F;
+  transition: color 0.7s ease-in-out;
+}
+
+.no-btn > .fas:hover {
+  cursor: pointer;
+  color: rgb(88, 119, 204);
+}
+
+.no-btn > .fas:focus {
+  outline: none;
 }
 
 .modal-labels {
@@ -297,21 +317,44 @@ footer {
   justify-content: flex-end;
 }
 
+.add-this-place-btn {
+  color: #ffffff;
+  background-color: #00203F;
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.add-this-place-btn:hover {
+  cursor: pointer;
+  background-color: rgb(88, 119, 204);
+  transition: background-color 0.7s ease-in-out;
+}
+
+.add-this-place-btn:focus {
+  outline: none;
+}
+
+.modal-name,
+.modal-description {
+  font-weight: 1000;
+}
+
 .picture-name,
 .picture-description {
   margin-top: 10px;
   margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  box-shadow: 5px 5px 10px #868383;
+  font-size: 20px;
 }
 
 .add-to-my-places,
 .modal-name,
 .modal-description {
   color: #00203F;
-}
-
-.add-this-place-btn {
-  color: #ffffff;
-  background-color: #00203F;
 }
 
 .modal-form,
