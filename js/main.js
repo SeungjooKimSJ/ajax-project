@@ -128,4 +128,22 @@ $noBtn.addEventListener('click', closeModal);
 
 function closeModal(event) {
   $modalContent.className = 'modal-content ' + 'hidden';
-}
+};
+
+var $modalForm = document.querySelector('.modal-form');
+var $addThisPlaceBtn = document.querySelector('.add-this-place-btn');
+
+$addThisPlaceBtn.addEventListener('submit', addThisPlace);
+
+function addThisPlace(event) {
+  event.preventDefault();
+
+  var pictureData = {
+    name: $modalForm.elements.name.value,
+    description: $modalForm.elements.description.value
+  };
+  console.log('pictureData:', pictureData);
+
+  $modalForm.reset();
+  $modalContent.className = 'modal-content ' + 'hidden';
+};
