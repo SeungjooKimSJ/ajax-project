@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+* {
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Home Page styling !!!!!!!!!!! */
+
+.home-page-view {
+  display: flex;
+  justify-content: left;
+  padding-left: 3rem;
+  background-color: #00203F;
+  color: #ffffff;
+}
+
+.header-h2 {
+  margin-right: 3rem;
+}
+
+.header-search-icon {
+  margin-left: 3rem;
+  margin-top: 1.4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  background-color: #C9F3E1;
+  color: #00203F;
+}
+
+.greeting {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.main-image {
+  display: flex;
+  justify-content: center;
+}
+
+.main-img {
+  width: 95%;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.main-two-btns-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-first-btn {
+  margin-bottom: 2rem;
+}
+
+.main-first-btn button {
+  display: flex;
+  font-size: 22px;
+}
+
+.main-btn-search-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.main-second-btn {
+  margin-bottom: 3rem;
+}
+
+.main-second-btn button {
+  font-size: 22px;
+}
+
+.main-first-btn button,
+.main-second-btn button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #00203F;
+  color: #ffffff;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.main-first-btn button:hover,
+.main-second-btn button:hover {
+  cursor: pointer;
+  background-color: rgb(88, 119, 204);
+}
+
+.main-first-btn button:focus,
+.main-second-btn button:focus {
+  outline: none;
+}
+
+footer {
+  background-color: #00203f;
+  color: #ffffff;
+  padding: 1.2rem 0;
+}
+
+.footer-home-icons-view {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.5rem;
+  color: #C9F3E1;
+}
+
+.footer-home-icons-view .fas:first-child {
+  color: #ffffff;
+}
+
+/* Search Page styling !!!!!!!!!!! */
+
+.search-page-view {
+  display: flex;
+  justify-content: center;
+  background-color: #00203F;
+  color: #ffffff;
+}
+
+.search-bar {
+  position: relative;
+}
+
+#input-search {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  padding: 10px 30px;
+  border-radius: 15px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.search-icon-btn {
+  background-color: transparent;
+  font-size: 1.1rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+#input-search::placeholder {
+  color: #00203F;
+}
+
+.search-h2-and-img-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting-search-h2 {
+  margin-right: 50px;
+}
+
+.search-img-1 {
+  margin-bottom: 30px;
+}
+
+.search-img-2 {
+  margin-bottom: 30px;
+}
+
+.search-img-1,
+.search-img-2 {
+  width: 95%;
+  border-radius: 20px;
+}
+
+.footer-search-icons-view {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.5rem;
+  color: #C9F3E1;
+}
+
+.footer-search-icons-view > .fas:nth-child(even) {
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Search Result Page styling !!!!!!!!!!! */
+
+.search-result-view {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.ul-view {
+  margin: 0;
+  padding: 0;
+}
+
+.search-result-listed {
+  list-style: none;
+}
+
+.new-search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h2-and-btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.photographer-name-h2 {
+  margin-left: 1rem;
+}
+
+.searched-image {
+  width: 95%;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.add-icon-btn {
+  background-color: #00203F;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 12px 10px;
+  margin-right: 1rem;
+  padding: 0 15px;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.add-icon-btn:hover {
+  cursor: pointer;
+  background-color: rgb(88, 119, 204);
+}
+
+.add-icon-btn:focus {
+  outline: none;
+}
+
+.add-icon-btn > .fas {
+  color: #C9F3E1;
+  transition: color 0.7s ease-in-out;
+}
+
+.add-icon-btn > .fas:hover {
+  color: #ffffff;
+}

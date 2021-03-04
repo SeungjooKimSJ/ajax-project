@@ -7,13 +7,86 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
+
 <body>
   <header>
+    <div class="home-page-view" data-view="home-page">
+      <h2 class="header-h2">Bucket Places</h2>
+      <div class="header-search-icon">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+    <div class="search-page-view hidden" data-view="home-page">
+      <form class="search-bar">
+        <label for="search">
+          <input type="search" name="search" id="input-search" placeholder="search bucket places">
+          <button class="search-icon-btn">
+            <i class="fas fa-search fa-search-inside"></i>
+          </button>
+        </label>
+      </form>
+    </div>
   </header>
+
   <main>
+    <div class="main-h2-and-img-view" data-view="home-page">
+      <div class="greeting">
+        <h2 class="greeting-h2">Welcome, SJ !</h2>
+      </div>
+      <div class="main-image">
+        <img src="images/new-year-winter-ver.jpg" alt="2021 with santa hat" class="main-img">
+      </div>
+    </div>
+
+    <div class="search-h2-and-img-view hidden" data-view="home-page">
+      <h2 class="greeting-search-h2">
+        Where are your places
+      </h2>
+      <img src="./images/Travel-the-world.jpg.jpg" alt="Travel The World" class="search-img-1">
+      <img src="./images/Explore-the-world.jpg.jpg" alt="Explore The World" class="search-img-2">
+    </div>
+
+    <div class="main-two-btns-view" data-view="home-page">
+      <div class="main-first-btn">
+        <button>
+          <div class="main-btn-search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          Search Bucket Places
+        </button>
+      </div>
+      <div class="main-second-btn">
+        <button>To My Places</button>
+      </div>
+    </div>
+
+    <div class="search-result-view hidden" data-view="home-page">
+      <h2 class="search-result-h2"></h2>
+    </div>
+    <ul class="ul-view hidden" data-view="home-page">
+      <li class="search-result-listed"></li>
+    </ul>
   </main>
+
+  <footer>
+    <div class="footer-home-icons-view" data-view="home-page">
+      <i class="fas fa-home"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-map-marked-alt"></i>
+    </div>
+
+    <div class="footer-search-icons-view hidden" data-view="home-page">
+      <i class="fas fa-home"></i>
+      <i class="fas fa-plus"></i>
+      <i class="fas fa-map-marked-alt"></i>
+    </div>
+  </footer>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 </html>
