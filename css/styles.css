@@ -257,6 +257,66 @@ footer {
 
 /* Modal To Add styling !!!!!!!!!!! */
 
-.off {
-  display: none;
+.modal-to-add {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* text-align: center; */
+}
+
+.modal-content {
+  /* display: block; */
+  position: fixed;
+  width: 85vw;
+  height: 50vh;
+  top: 20%;
+  left: 10%;
+}
+
+.modal-form {
+  margin: 20px auto;
+  padding: 5px 10px 10px;
+  max-width: 560px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(189, 189, 189);
+}
+
+.modal-h2-and-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.modal-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.picture-name,
+.picture-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.add-to-my-places,
+.modal-name,
+.modal-description {
+  color: #00203F;
+}
+
+.add-this-place-btn {
+  color: #ffffff;
+  background-color: #00203F;
+}
+
+.modal-form,
+.picture-name,
+.picture-description,
+.add-this-place-btn {
+  border-radius: 5px;
 }
