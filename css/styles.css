@@ -96,11 +96,6 @@ main {
   outline: none;
 }
 
-/* .main-first-btn button:active,
-.main-second-btn button:active {
-
-} */
-
 footer {
   background-color: #00203f;
   color: #ffffff;
@@ -160,9 +155,9 @@ footer {
   align-items: center;
 }
 
-/* #greeting-search {
-  NEED TO MAKE H2 MOVES TO THE LEFT!!!
-} */
+.greeting-search-h2 {
+  margin-right: 3rem;
+}
 
 .search-img-1 {
   margin-bottom: 3rem;
