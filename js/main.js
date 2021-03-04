@@ -111,3 +111,10 @@ function renderSearchResultPage(name, url) {
 
   return $newDiv;
 };
+
+var $plusIconBtn = document.querySelector('.add-icon-btn');
+// $plusIconBtn.addEventListener('click', openModalForAdd);
+
+function openModalToAdd(event) {
+
+}

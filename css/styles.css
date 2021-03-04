@@ -254,3 +254,9 @@ footer {
 .add-icon-btn > .fas:hover {
   color: #ffffff;
 }
+
+/* Modal To Add styling !!!!!!!!!!! */
+
+.off {
+  display: none;
+}
