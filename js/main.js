@@ -13,6 +13,14 @@ var $searchResultH2 = document.querySelector('.search-result-h2');
 var $ulView = document.querySelector('.ul-view');
 var $liSearchResult = document.querySelector('.search-result-listed');
 
+var $headerSearchIcon = document.querySelector('.header-search-icon');
+var $mainFirstBtn = document.querySelector('.main-first-btn');
+
+
+$headerSearchIcon.addEventListener('click', clickSearch);
+$mainFirstBtn.addEventListener('click', clickSearch);
+$form.addEventListener('submit', retrieveResult);
+
 
 function clickSearch(event) {
   $homePage.className = 'home-page-view hidden';
@@ -25,13 +33,6 @@ function clickSearch(event) {
   $footerSearchIcons.className = 'footer-search-icons-view'
 };
 
-var $headerSearchIcon = document.querySelector('.header-search-icon');
-var $mainFirstBtn = document.querySelector('.main-first-btn');
-
-$headerSearchIcon.addEventListener('click', clickSearch);
-$mainFirstBtn.addEventListener('click', clickSearch);
-
-
 function showSearchResultView() {
   $homePage.className = 'home-page-view hidden';
   $mainH2AndImg.className = 'main-h2-and-img-view hidden';
@@ -42,7 +43,6 @@ function showSearchResultView() {
   $searchPage.className = 'search-page-view';
   $footerSearchIcons.className = 'footer-search-icons-view';
 }
-
 
 function getPlacesData(query) {
   var xhr = new XMLHttpRequest();
@@ -73,7 +73,6 @@ function getPlacesData(query) {
   xhr.send();
 };
 
-
 function retrieveResult(event) {
   event.preventDefault();
 
@@ -84,9 +83,6 @@ function retrieveResult(event) {
 
   $form.reset();
 };
-
-$form.addEventListener('submit', retrieveResult);
-
 
 function renderSearchResultPage(name, url) {
   var $newDiv = document.createElement('div');
