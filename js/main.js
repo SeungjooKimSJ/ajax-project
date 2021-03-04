@@ -42,7 +42,7 @@ function showSearchResultView() {
 
   $searchPage.className = 'search-page-view';
   $footerSearchIcons.className = 'footer-search-icons-view';
-}
+};
 
 function getPlacesData(query) {
   var xhr = new XMLHttpRequest();
