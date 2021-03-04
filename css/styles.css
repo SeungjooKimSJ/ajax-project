@@ -257,17 +257,14 @@ footer {
 
 /* Modal To Add styling !!!!!!!!!!! */
 
-.modal-to-add {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* text-align: center; */
-}
+/* .modal-to-add {
+
+} */
 
 .modal-content {
-  /* display: block; */
   position: fixed;
   width: 85vw;
-  height: 50vh;
+  height: 65vh;
   top: 20%;
   left: 8%;
 }

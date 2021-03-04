@@ -105,6 +105,7 @@ function renderSearchResultPage(name, url) {
   var $plusIcon = document.createElement('i');
   $plusIcon.setAttribute('class', 'fas fa-plus');
 
+
   $newDiv.append($nameH2AndIconBtn, $searchedImg);
   $nameH2AndIconBtn.append($photographerNameH2, $addIconBtn);
   $addIconBtn.appendChild($plusIcon);
@@ -112,9 +113,19 @@ function renderSearchResultPage(name, url) {
   return $newDiv;
 };
 
-var $plusIconBtn = document.querySelector('.add-icon-btn');
-// $plusIconBtn.addEventListener('click', openModalForAdd);
 
-function openModalToAdd(event) {
+var $modalContent = document.querySelector('.modal-content');
+// var $addIconBtn = document.querySelector('.add-icon-btn');
+// $addIconBtn.addEventListener('click', openModalForAdd);
 
+// function openModalToAdd(event) {
+//   $modalContent.className = 'modal-content';
+// }
+
+
+var $noBtn = document.querySelector('.no-btn');
+$noBtn.addEventListener('click', closeModal);
+
+function closeModal(event) {
+  $modalContent.className = 'modal-content ' + 'hidden';
 }
