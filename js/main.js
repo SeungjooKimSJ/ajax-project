@@ -7,6 +7,13 @@ var $searchPage = document.querySelector('.search-page-view');
 var $searchH2AndImg = document.querySelector('.search-h2-and-img-view');
 var $footerSearchIcons = document.querySelector('.footer-search-icons-view');
 
+var $form = document.querySelector('.search-bar');
+var $searchResultView = document.querySelector('.search-result-view');
+var $searchResultH2 = document.querySelector('.search-result-h2');
+var $ulView = document.querySelector('.ul-view');
+var $liSearchResult = document.querySelector('.search-result-listed');
+
+
 function clickSearch(event) {
   $homePage.className = 'home-page-view hidden';
   $mainH2AndImg.className = 'main-h2-and-img-view hidden';
@@ -25,6 +32,18 @@ $headerSearchIcon.addEventListener('click', clickSearch);
 $mainFirstBtn.addEventListener('click', clickSearch);
 
 
+function showSearchResultView() {
+  $homePage.className = 'home-page-view hidden';
+  $mainH2AndImg.className = 'main-h2-and-img-view hidden';
+  $mainTwoBtns.className = 'main-two-btns-view hidden';
+  $footerHomeIcons.className = 'footer-home-icons-view hidden';
+  $searchH2AndImg.className = 'search-h2-and-img-view hidden';
+
+  $searchPage.className = 'search-page-view';
+  $footerSearchIcons.className = 'footer-search-icons-view';
+}
+
+
 function getPlacesData(query) {
   var xhr = new XMLHttpRequest();
   var url = 'https://api.unsplash.com/search/photos/?client_id=FOyQYe0Rid3QLEMMV75PxVbRJNk-AowlsdW9TTbeo_8&query=' + query;
@@ -36,17 +55,10 @@ function getPlacesData(query) {
 
     var dataResult = xhr.response.results;
 
-    $divDom.className = 'search-result-view';
-    $ul.className = 'ul-view';
+    $searchResultView.className = 'search-result-view';
+    $ulView.className = 'ul-view';
 
-    $homePage.className = 'home-page-view hidden';
-    $mainH2AndImg.className = 'main-h2-and-img-view hidden';
-    $mainTwoBtns.className = 'main-two-btns-view hidden';
-    $footerHomeIcons.className = 'footer-home-icons-view hidden';
-    $searchH2AndImg.className = 'search-h2-and-img-view hidden';
-
-    $searchPage.className = 'search-page-view';
-    $footerSearchIcons.className = 'footer-search-icons-view';
+    showSearchResultView();
 
     for (var i = 0; i < dataResult.length; i++) {
       var individualResult = dataResult[i];
@@ -55,29 +67,11 @@ function getPlacesData(query) {
       var name = individualResult.user.name;
 
       var domTree = renderSearchResultPage(name, url);
-      $li.appendChild(domTree);
+      $liSearchResult.appendChild(domTree);
     }
   });
   xhr.send();
 };
-
-
-var $main = document.querySelector('main');
-var $form = document.querySelector('.search-bar');
-
-var $divDom = document.createElement('div');
-$divDom.setAttribute('class', 'search-result-view hidden');
-var $searchResultH2 = document.createElement('h2');
-$searchResultH2.setAttribute('class', 'search-result-h2');
-
-var $ul = document.createElement('ul');
-$ul.setAttribute('class', 'ul-view hidden');
-var $li = document.createElement('li');
-$li.setAttribute('class', 'search-result-listed');
-
-$main.append($divDom, $ul);
-$divDom.appendChild($searchResultH2);
-$ul.appendChild($li)
 
 
 function retrieveResult(event) {
