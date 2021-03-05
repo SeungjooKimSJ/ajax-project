@@ -32,7 +32,7 @@ main {
 
 .greeting {
   display: flex;
-  margin-left: 3rem;
+  margin-left: 50px;
 }
 
 .main-image {
@@ -119,10 +119,6 @@ footer {
   color: #C9F3E1;
 }
 
-.on {
-  color: #ffffff;
-}
-
 /* Search Page styling !!!!!!!!!!! */
 
 .search-page-view {
@@ -183,7 +179,7 @@ footer {
   border-radius: 20px;
 }
 
-.footer-search-icons-view {
+/* .footer-search-icons-view {
   display: flex;
   justify-content: space-around;
   font-size: 2.5rem;
@@ -192,11 +188,7 @@ footer {
 
 .footer-search-icons-view > .fas:nth-child(even) {
   color: #ffffff;
-}
-
-.hidden {
-  display: none;
-}
+} */
 
 /* Search Result Page styling !!!!!!!!!!! */
 
@@ -366,4 +358,42 @@ footer {
 .picture-description,
 .add-this-place-btn {
   border-radius: 5px;
+}
+
+/* My Place Album Page styling !!!!!!!!!!! */
+
+.my-place-view {
+  display: flex;
+  margin-left: 50px;
+}
+
+.smy-place-ul-view {
+  margin: 0;
+  padding: 0;
+}
+
+.my-place-listed {
+  list-style: none;
+}
+
+/* .new-search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h2-and-btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+} */
+
+
+
+.hidden {
+  display: none;
+}
+
+.on {
+  color: #ffffff;
 }

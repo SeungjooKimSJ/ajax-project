@@ -22,8 +22,10 @@ var $mainFirstBtn = document.querySelector('.main-first-btn');
 
 var $myPlace = document.querySelector('.my-place-view');
 var $ulMyPlace = document.querySelector('.my-place-ul-view');
+var $liMyPlace = document.querySelector('.my-place-listed');
 
 var $modalContent = document.querySelector('.modal-content');
+// var $modalForm = document.querySelector('.modal-form');
 
 var selectedImage;
 
@@ -33,6 +35,21 @@ $footerHomeIcon.addEventListener('click', showMainPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
 $footerAlbumIcon.addEventListener('click', showAlbumPage);
 $form.addEventListener('submit', retrieveResult);
+// $modalForm.addEventListener('submit', function () {
+//     event.preventDefault();
+
+//     var savedImageInfo = {
+//       name: $modalForm.elements.name.value,
+//       description: $modalForm.elements.description.value,
+//     };
+
+//     savedImageInfo.imageInfo = selectedImage;
+
+//     savedData.push(savedImageInfo);
+
+//     $modalForm.reset();
+//     $modalContent.className = 'modal-content ' + 'hidden';
+//   });
 
 
 function showSearchPage(event) {
@@ -79,6 +96,12 @@ function showAlbumPage(event) {
   $myPlace.className = 'my-place-view';
   $ulMyPlace.className = 'my-place-ul-view';
   $footerAlbumIcon.className = 'footer-album-icon on';
+
+  // for (var i = 0; i < savedData.length; i++) {
+  //   var savedImageDomTree = renderMyPlacesPage(savedData[i]);
+  //     $liMyPlace.appendChild(savedImageDomTree);
+  // };
+
 };
 
 function showMainPage(event) {
@@ -191,19 +214,19 @@ $modalForm.addEventListener('submit', function () {
 
     var savedImageInfo = {
       name: $modalForm.elements.name.value,
-      description: $modalForm.elements.description.value,
+      description: $modalForm.elements.description.value
     };
 
     savedImageInfo.imageInfo = selectedImage;
 
-    savedData.push(savedInfo);
+    savedData.push(savedImageInfo);
 
     $modalForm.reset();
     $modalContent.className = 'modal-content ' + 'hidden';
   });
 
 
-function renderMyPlacesPage() {
+function renderMyPlacesPage(name, url) {
   var $myPlacesImage = document.createElement('div');
   $myPlacesImage.setAttribute('class', 'my-places-image');
 
@@ -221,14 +244,14 @@ function renderMyPlacesPage() {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-name');
-  $inputName.textContent = savedImageInfo.name;
+  // $inputName.textContent = savedImageInfo.name;
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'textarea-description');
-  $textAreaDescription.textContent = savedImageInfo.description;
+  // $textAreaDescription.textContent = savedImageInfo.description;
 
   return $myPlacesImage;
 };
