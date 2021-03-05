@@ -194,7 +194,7 @@ footer {
   margin-left: 3rem;
 }
 
-.ul-view {
+.search-ul-view {
   margin: 0;
   padding: 0;
 }
@@ -256,10 +256,6 @@ footer {
 }
 
 /* Modal To Add styling !!!!!!!!!!! */
-
-/* .modal-to-add {
-
-} */
 
 .modal-content {
   position: fixed;

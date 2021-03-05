@@ -10,7 +10,7 @@ var $footerSearchIcons = document.querySelector('.footer-search-icons-view');
 var $form = document.querySelector('.search-bar');
 var $searchResultView = document.querySelector('.search-result-view');
 var $searchResultH2 = document.querySelector('.search-result-h2');
-var $ulView = document.querySelector('.ul-view');
+var $searchUlView = document.querySelector('.search-ul-view');
 var $liSearchResult = document.querySelector('.search-result-listed');
 
 var $headerSearchIcon = document.querySelector('.header-search-icon');
@@ -56,7 +56,7 @@ function getPlacesData(query) {
     var dataResult = xhr.response.results;
 
     $searchResultView.className = 'search-result-view';
-    $ulView.className = 'ul-view';
+    $searchUlView.className = 'search-ul-view';
 
     showSearchResultView();
 
@@ -105,7 +105,6 @@ function renderSearchResultPage(name, url) {
   var $plusIcon = document.createElement('i');
   $plusIcon.setAttribute('class', 'fas fa-plus');
 
-
   $newDiv.append($nameH2AndIconBtn, $searchedImg);
   $nameH2AndIconBtn.append($photographerNameH2, $addIconBtn);
   $addIconBtn.appendChild($plusIcon);
@@ -120,7 +119,7 @@ var $modalContent = document.querySelector('.modal-content');
 
 // function openModalToAdd(event) {
 //   $modalContent.className = 'modal-content';
-// }
+// } How to make click eventlistener in domtree btn (102)?
 
 
 var $noBtn = document.querySelector('.no-btn');
@@ -146,4 +145,35 @@ function addThisPlace(event) {
 
   $modalForm.reset();
   $modalContent.className = 'modal-content ' + 'hidden';
+};
+
+
+function renderMyPlacesPage() {
+  var $myPlacesImage = document.createElement('div');
+  $myPlacesImage.setAttribute('class', 'my-places-image');
+
+  var $savedImage = document.createElement('img');
+  $savedImage.setAttribute('src', './images/2021-ver1.jpg.jpg');
+  $savedImage.setAttribute('class', 'saved-image');
+
+  var $savedInfo = document.createElement('div');
+  $savedInfo.setAttribute('class', 'saved-info');
+
+  var $labelName = document.createElement('label');
+  $labelName.setAttribute('class', 'saved-img-name');
+
+  // var $editInfoIcon = document.createElement();
+
+  var $inputName = document.createElement('input');
+  $inputName.setAttribute('class', 'input-name');
+  // $inputName.textContent = ;
+
+  var $labelDescription = document.createElement('label');
+  $labelDescription.setAttribute('class', 'saved-img-description');
+
+  var $textAreaDescription = document.createElement('textarea');
+  $textAreaDescription.setAttribute('class', 'textarea-description');
+  // $textAreaDescription.textContent = ;
+
+  return $myPlacesImage;
 };
