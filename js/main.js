@@ -16,6 +16,9 @@ var $liSearchResult = document.querySelector('.search-result-listed');
 var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $mainFirstBtn = document.querySelector('.main-first-btn');
 
+var $modalContent = document.querySelector('.modal-content');
+
+var selectedImage;
 
 $headerSearchIcon.addEventListener('click', clickSearch);
 $mainFirstBtn.addEventListener('click', clickSearch);
@@ -102,6 +105,22 @@ function renderSearchResultPage(name, url) {
   var $addIconBtn = document.createElement('button');
   $addIconBtn.setAttribute('class', 'add-icon-btn');
 
+  $addIconBtn.addEventListener('click', function () {
+    $modalContent.className = 'modal-content';
+    selectedImage = {
+      name: name,
+      url: url
+    };
+  });
+
+  var $noBtn = document.querySelector('.no-btn');
+
+  $noBtn.addEventListener('click', function () {
+    $modalContent.className = 'modal-content ' + 'hidden';
+  });
+
+  var $addThisPlaceBtn = document.querySelector('.add-this-place-btn');
+
   var $plusIcon = document.createElement('i');
   $plusIcon.setAttribute('class', 'fas fa-plus');
 
@@ -112,40 +131,25 @@ function renderSearchResultPage(name, url) {
   return $newDiv;
 };
 
-
-var $modalContent = document.querySelector('.modal-content');
-// var $addIconBtn = document.querySelector('.add-icon-btn');
-// $addIconBtn.addEventListener('click', openModalForAdd);
-
-// function openModalToAdd(event) {
-//   $modalContent.className = 'modal-content';
-// } How to make click eventlistener in domtree btn (102)?
-
-
-var $noBtn = document.querySelector('.no-btn');
-$noBtn.addEventListener('click', closeModal);
-
-function closeModal(event) {
-  $modalContent.className = 'modal-content ' + 'hidden';
-};
-
 var $modalForm = document.querySelector('.modal-form');
-var $addThisPlaceBtn = document.querySelector('.add-this-place-btn');
 
-$addThisPlaceBtn.addEventListener('submit', addThisPlace);
 
-function addThisPlace(event) {
-  event.preventDefault();
 
-  var pictureData = {
-    name: $modalForm.elements.name.value,
-    description: $modalForm.elements.description.value
-  };
-  console.log('pictureData:', pictureData);
+$modalForm.addEventListener('submit', function () {
+    event.preventDefault();
 
-  $modalForm.reset();
-  $modalContent.className = 'modal-content ' + 'hidden';
-};
+    var savedImageInfo = {
+      name: $modalForm.elements.name.value,
+      description: $modalForm.elements.description.value,
+    };
+
+    savedImageInfo.imageInfo = selectedImage;
+
+    savedData.push(savedInfo);
+
+    $modalForm.reset();
+    $modalContent.className = 'modal-content ' + 'hidden';
+  });
 
 
 function renderMyPlacesPage() {
@@ -153,7 +157,7 @@ function renderMyPlacesPage() {
   $myPlacesImage.setAttribute('class', 'my-places-image');
 
   var $savedImage = document.createElement('img');
-  $savedImage.setAttribute('src', './images/2021-ver1.jpg.jpg');
+  $savedImage.setAttribute('src', savedData.url);
   $savedImage.setAttribute('class', 'saved-image');
 
   var $savedInfo = document.createElement('div');
@@ -166,14 +170,14 @@ function renderMyPlacesPage() {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-name');
-  // $inputName.textContent = ;
+  $inputName.textContent = savedImageInfo.name;
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'textarea-description');
-  // $textAreaDescription.textContent = ;
+  $textAreaDescription.textContent = savedImageInfo.description;
 
   return $myPlacesImage;
 };
