@@ -19,6 +19,7 @@ var $liSearchResult = document.querySelector('.search-result-listed');
 
 var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $mainFirstBtn = document.querySelector('.main-first-btn');
+var $mainSecondBtn = document.querySelector('.main-second-btn');
 
 var $myPlace = document.querySelector('.my-place-view');
 var $ulMyPlace = document.querySelector('.my-place-ul-view');
@@ -31,6 +32,7 @@ var selectedImage;
 
 $headerSearchIcon.addEventListener('click', showSearchPage);
 $mainFirstBtn.addEventListener('click', showSearchPage);
+$mainSecondBtn.addEventListener('click', showAlbumPage);
 $footerHomeIcon.addEventListener('click', showMainPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
 $footerAlbumIcon.addEventListener('click', showAlbumPage);
@@ -97,10 +99,10 @@ function showAlbumPage(event) {
   $ulMyPlace.className = 'my-place-ul-view';
   $footerAlbumIcon.className = 'footer-album-icon on';
 
-  // for (var i = 0; i < savedData.length; i++) {
-  //   var savedImageDomTree = renderMyPlacesPage(savedData[i]);
-  //     $liMyPlace.appendChild(savedImageDomTree);
-  // };
+  for (var i = 0; i < savedData.length; i++) {
+    var savedImageDomTree = renderMyPlacesPage(savedData[i]);
+      $liMyPlace.appendChild(savedImageDomTree);
+  };
 
 };
 
@@ -226,12 +228,14 @@ $modalForm.addEventListener('submit', function () {
   });
 
 
-function renderMyPlacesPage(name, url) {
+function renderMyPlacesPage(savedData) {
+  // console.log('savedData:', savedData);
+
   var $myPlacesImage = document.createElement('div');
   $myPlacesImage.setAttribute('class', 'my-places-image');
 
   var $savedImage = document.createElement('img');
-  $savedImage.setAttribute('src', savedData.url);
+  $savedImage.setAttribute('src', imageInfo.url);
   $savedImage.setAttribute('class', 'saved-image');
 
   var $savedInfo = document.createElement('div');
@@ -244,14 +248,14 @@ function renderMyPlacesPage(name, url) {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-name');
-  // $inputName.textContent = savedImageInfo.name;
+  $inputName.textContent = savedData.name;
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'textarea-description');
-  // $textAreaDescription.textContent = savedImageInfo.description;
+  $textAreaDescription.textContent = savedData.description;
 
   return $myPlacesImage;
 };
