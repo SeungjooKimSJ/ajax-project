@@ -172,7 +172,7 @@ footer {
 
 .search-result-view {
   display: flex;
-  margin-left: 3rem;
+  margin-left: 50px;
 }
 
 .search-ul-view {
@@ -350,7 +350,7 @@ footer {
   margin-left: 50px;
 }
 
-.smy-place-ul-view {
+.my-place-ul-view {
   margin: 0;
   padding: 0;
 }
