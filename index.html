@@ -63,25 +63,60 @@
       </div>
     </div>
 
+    <div class="my-place-view hidden" data-view="home-page">
+      <h2 class="my-place-h2">My Places</h2>
+    </div>
+    <ul class="my-place-ul-view hidden" data-view="home-page">
+      <li class="my-place-listed"></li>
+    </ul>
+
     <div class="search-result-view hidden" data-view="home-page">
       <h2 class="search-result-h2"></h2>
     </div>
-    <ul class="ul-view hidden" data-view="home-page">
+    <ul class="search-ul-view hidden" data-view="home-page">
       <li class="search-result-listed"></li>
     </ul>
+
+    <div class="modal-content hidden">
+      <form class="modal-form">
+        <div class="modal-h2-and-btn">
+          <h2 class="add-to-my-places">
+            Add to My Places
+          </h2>
+          <button type="button" class="no-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-labels">
+          <label for="name" class="modal-name">Name</label>
+          <input required type="text" name="name"
+          placeholder="name your Bucket Place" class="picture-name">
+          <label for="description" class="modal-description">Description</label>
+          <textarea required type="text" name="description"
+          placeholder="describe your Bucket Place"
+          class="picture-description" rows="5"></textarea>
+        </div>
+
+        <div class="form-save">
+          <button type="submit" class="add-this-place-btn">
+            Add this place
+          </button>
+        </div>
+      </form>
+    </div>
   </main>
 
   <footer>
-    <div class="footer-home-icons-view" data-view="home-page">
-      <i class="fas fa-home"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-map-marked-alt"></i>
-    </div>
-
-    <div class="footer-search-icons-view hidden" data-view="home-page">
-      <i class="fas fa-home"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-map-marked-alt"></i>
+    <div class="footer-icons-view" data-view="home-page">
+      <div class="footer-home-icon on">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="footer-plus-icon">
+        <i class="fas fa-plus"></i>
+      </div>
+      <div class="footer-album-icon">
+        <i class="fas fa-map-marked-alt"></i>
+      </div>
     </div>
   </footer>
 

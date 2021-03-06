@@ -32,7 +32,7 @@ main {
 
 .greeting {
   display: flex;
-  margin-left: 3rem;
+  margin-left: 50px;
 }
 
 .main-image {
@@ -101,15 +101,11 @@ footer {
   padding: 1.2rem 0;
 }
 
-.footer-home-icons-view {
+.footer-icons-view {
   display: flex;
   justify-content: space-around;
   font-size: 2.5rem;
   color: #C9F3E1;
-}
-
-.footer-home-icons-view .fas:first-child {
-  color: #ffffff;
 }
 
 /* Search Page styling !!!!!!!!!!! */
@@ -172,21 +168,6 @@ footer {
   border-radius: 20px;
 }
 
-.footer-search-icons-view {
-  display: flex;
-  justify-content: space-around;
-  font-size: 2.5rem;
-  color: #C9F3E1;
-}
-
-.footer-search-icons-view > .fas:nth-child(even) {
-  color: #ffffff;
-}
-
-.hidden {
-  display: none;
-}
-
 /* Search Result Page styling !!!!!!!!!!! */
 
 .search-result-view {
@@ -194,7 +175,7 @@ footer {
   margin-left: 3rem;
 }
 
-.ul-view {
+.search-ul-view {
   margin: 0;
   padding: 0;
 }
@@ -252,5 +233,137 @@ footer {
 }
 
 .add-icon-btn > .fas:hover {
+  color: #ffffff;
+}
+
+/* Modal To Add styling !!!!!!!!!!! */
+
+.modal-content {
+  position: fixed;
+  width: 85vw;
+  height: 65vh;
+  top: 20%;
+  left: 8%;
+}
+
+.modal-form {
+  margin: 20px auto;
+  padding: 5px 10px 10px;
+  max-width: 560px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.modal-h2-and-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.no-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.no-btn > .fas {
+  color: #00203F;
+  transition: color 0.7s ease-in-out;
+}
+
+.no-btn > .fas:hover {
+  cursor: pointer;
+  color: rgb(88, 119, 204);
+}
+
+.no-btn > .fas:focus {
+  outline: none;
+}
+
+.modal-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-this-place-btn {
+  color: #ffffff;
+  background-color: #00203F;
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.add-this-place-btn:hover {
+  cursor: pointer;
+  background-color: rgb(88, 119, 204);
+  transition: background-color 0.7s ease-in-out;
+}
+
+.add-this-place-btn:focus {
+  outline: none;
+}
+
+.modal-name,
+.modal-description {
+  font-weight: 1000;
+}
+
+.picture-name,
+.picture-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  box-shadow: 5px 5px 10px #868383;
+  font-size: 20px;
+}
+
+.picture-name::placeholder,
+.picture-description::placeholder {
+  color: rgb(145, 160, 202);
+}
+
+.add-to-my-places,
+.modal-name,
+.modal-description {
+  color: #00203F;
+}
+
+.modal-form,
+.picture-name,
+.picture-description,
+.add-this-place-btn {
+  border-radius: 5px;
+}
+
+/* My Place Album Page styling !!!!!!!!!!! */
+
+.my-place-view {
+  display: flex;
+  margin-left: 50px;
+}
+
+.smy-place-ul-view {
+  margin: 0;
+  padding: 0;
+}
+
+.my-place-listed {
+  list-style: none;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.on {
   color: #ffffff;
 }
