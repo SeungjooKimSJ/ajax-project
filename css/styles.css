@@ -325,6 +325,11 @@ footer {
   font-size: 20px;
 }
 
+.picture-name::placeholder,
+.picture-description::placeholder {
+  color: rgb(145, 160, 202);
+}
+
 .add-to-my-places,
 .modal-name,
 .modal-description {
