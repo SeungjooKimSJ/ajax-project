@@ -94,10 +94,13 @@ function showAlbumPage(event) {
   $ulMyPlace.className = 'my-place-ul-view';
   $footerAlbumIcon.className = 'footer-album-icon on';
 
-  for (var i = 0; i < savedData.length; i++) {
-    var savedImageDomTree = renderMyPlacesPage(savedData[i]);
-      $liMyPlace.appendChild(savedImageDomTree);
-  };
+  // for (var i = 0; i < savedData.length; i++) {
+  //   var savedImageDomTree = renderMyPlacesPage(savedData[i]);
+  //     $liMyPlace.appendChild(savedImageDomTree);
+  // };
+
+  var exampleRenderPage = renderMyPlacesPage();
+  $liMyPlace.appendChild(exampleRenderPage);
 
 };
 
@@ -203,14 +206,45 @@ function renderSearchResultPage(name, url) {
 };
 
 
-function renderMyPlacesPage(savedData) {
-  // console.log('savedData:', savedData);
+// function renderMyPlacesPage(savedData) {
+//   // console.log('savedData:', savedData);
+
+//   var $myPlacesImage = document.createElement('div');
+//   $myPlacesImage.setAttribute('class', 'my-places-image');
+
+//   var $savedImage = document.createElement('img');
+//   // $savedImage.setAttribute('src', imageInfo.url);
+//   $savedImage.setAttribute('class', 'saved-image');
+
+//   var $savedInfo = document.createElement('div');
+//   $savedInfo.setAttribute('class', 'saved-info');
+
+//   var $labelName = document.createElement('label');
+//   $labelName.setAttribute('class', 'saved-img-name');
+
+//   // var $editInfoIcon = document.createElement();
+
+//   var $inputName = document.createElement('input');
+//   $inputName.setAttribute('class', 'input-name');
+//   // $inputName.textContent = savedData.name;
+
+//   var $labelDescription = document.createElement('label');
+//   $labelDescription.setAttribute('class', 'saved-img-description');
+
+//   var $textAreaDescription = document.createElement('textarea');
+//   $textAreaDescription.setAttribute('class', 'textarea-description');
+//   // $textAreaDescription.textContent = savedData.description;
+
+//   return $myPlacesImage;
+// };
+
+function renderMyPlacesPage() {
 
   var $myPlacesImage = document.createElement('div');
   $myPlacesImage.setAttribute('class', 'my-places-image');
 
   var $savedImage = document.createElement('img');
-  // $savedImage.setAttribute('src', imageInfo.url);
+  $savedImage.setAttribute('src', './images/2021-ver1.jpg');
   $savedImage.setAttribute('class', 'saved-image');
 
   var $savedInfo = document.createElement('div');
@@ -223,14 +257,14 @@ function renderMyPlacesPage(savedData) {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-name');
-  // $inputName.textContent = savedData.name;
+  $inputName.textContent = 'example name';
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'textarea-description');
-  // $textAreaDescription.textContent = savedData.description;
+  $textAreaDescription.textContent = 'example description';
 
   return $myPlacesImage;
 };
