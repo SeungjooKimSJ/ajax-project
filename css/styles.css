@@ -101,17 +101,6 @@ footer {
   padding: 1.2rem 0;
 }
 
-/* .footer-home-icons-view {
-  display: flex;
-  justify-content: space-around;
-  font-size: 2.5rem;
-  color: #C9F3E1;
-} */
-
-/* .footer-home-icons-view .fas:first-child {
-  color: #ffffff;
-} */
-
 .footer-icons-view {
   display: flex;
   justify-content: space-around;
@@ -178,17 +167,6 @@ footer {
   width: 95%;
   border-radius: 20px;
 }
-
-/* .footer-search-icons-view {
-  display: flex;
-  justify-content: space-around;
-  font-size: 2.5rem;
-  color: #C9F3E1;
-}
-
-.footer-search-icons-view > .fas:nth-child(even) {
-  color: #ffffff;
-} */
 
 /* Search Result Page styling !!!!!!!!!!! */
 
@@ -375,19 +353,6 @@ footer {
 .my-place-listed {
   list-style: none;
 }
-
-/* .new-search-result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.h2-and-btn {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-} */
-
 
 
 .hidden {

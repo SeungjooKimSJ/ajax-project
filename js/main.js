@@ -1,7 +1,6 @@
 var $homePage = document.querySelector('.home-page-view');
 var $mainH2AndImg = document.querySelector('.main-h2-and-img-view');
 var $mainTwoBtns = document.querySelector('.main-two-btns-view');
-// var $footerHomeIcons = document.querySelector('.footer-home-icons-view');
 var $footerIcons = document.querySelector('.footer-icons-view');
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
@@ -9,7 +8,6 @@ var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
 var $searchPage = document.querySelector('.search-page-view');
 var $searchH2AndImg = document.querySelector('.search-h2-and-img-view');
-// var $footerSearchIcons = document.querySelector('.footer-search-icons-view');
 
 var $form = document.querySelector('.search-bar');
 var $searchResultView = document.querySelector('.search-result-view');
@@ -26,7 +24,7 @@ var $ulMyPlace = document.querySelector('.my-place-ul-view');
 var $liMyPlace = document.querySelector('.my-place-listed');
 
 var $modalContent = document.querySelector('.modal-content');
-// var $modalForm = document.querySelector('.modal-form');
+var $modalForm = document.querySelector('.modal-form');
 
 var selectedImage;
 
@@ -37,21 +35,21 @@ $footerHomeIcon.addEventListener('click', showMainPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
 $footerAlbumIcon.addEventListener('click', showAlbumPage);
 $form.addEventListener('submit', retrieveResult);
-// $modalForm.addEventListener('submit', function () {
-//     event.preventDefault();
+$modalForm.addEventListener('submit', function () {
+    event.preventDefault();
 
-//     var savedImageInfo = {
-//       name: $modalForm.elements.name.value,
-//       description: $modalForm.elements.description.value,
-//     };
+    var savedImageInfo = {
+      name: $modalForm.elements.name.value,
+      description: $modalForm.elements.description.value
+    };
 
-//     savedImageInfo.imageInfo = selectedImage;
+    savedImageInfo.imageInfo = selectedImage;
 
-//     savedData.push(savedImageInfo);
+    savedData.push(savedImageInfo);
 
-//     $modalForm.reset();
-//     $modalContent.className = 'modal-content ' + 'hidden';
-//   });
+    $modalForm.reset();
+    $modalContent.className = 'modal-content ' + 'hidden';
+  });
 
 
 function showSearchPage(event) {
@@ -60,13 +58,11 @@ function showSearchPage(event) {
   $mainTwoBtns.className = 'main-two-btns-view hidden';
   $myPlace.className = 'my-place-view hidden';
   $ulMyPlace.className = 'my-place-ul-view hidden';
-  // $footerHomeIcons.className = 'footer-home-icons-view hidden';
   $footerHomeIcon.className = 'footer-home-icon';
   $footerAlbumIcon.className = 'footer-album-icon';
 
   $searchPage.className = 'search-page-view';
   $searchH2AndImg.className = 'search-h2-and-img-view';
-  // $footerSearchIcons.className = 'footer-search-icons-view';
   $footerPlusIcon.className = 'footer-plus-icon on';
 };
 
@@ -79,7 +75,6 @@ function showSearchResultView(event) {
   $ulMyPlace.className = 'my-place-ul-view hidden';
   $footerHomeIcon.className = 'footer-home-icon';
   $footerAlbumIcon.className = 'footer-album-icon';
-  // $footerHomeIcons.className = 'footer-home-icons-view hidden';
 
   $searchPage.className = 'search-page-view';
   $footerPlusIcon.className = 'footer-plus-icon on';
@@ -207,26 +202,6 @@ function renderSearchResultPage(name, url) {
   return $newDiv;
 };
 
-var $modalForm = document.querySelector('.modal-form');
-
-
-
-$modalForm.addEventListener('submit', function () {
-    event.preventDefault();
-
-    var savedImageInfo = {
-      name: $modalForm.elements.name.value,
-      description: $modalForm.elements.description.value
-    };
-
-    savedImageInfo.imageInfo = selectedImage;
-
-    savedData.push(savedImageInfo);
-
-    $modalForm.reset();
-    $modalContent.className = 'modal-content ' + 'hidden';
-  });
-
 
 function renderMyPlacesPage(savedData) {
   // console.log('savedData:', savedData);
@@ -235,7 +210,7 @@ function renderMyPlacesPage(savedData) {
   $myPlacesImage.setAttribute('class', 'my-places-image');
 
   var $savedImage = document.createElement('img');
-  $savedImage.setAttribute('src', imageInfo.url);
+  // $savedImage.setAttribute('src', imageInfo.url);
   $savedImage.setAttribute('class', 'saved-image');
 
   var $savedInfo = document.createElement('div');
@@ -248,14 +223,14 @@ function renderMyPlacesPage(savedData) {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-name');
-  $inputName.textContent = savedData.name;
+  // $inputName.textContent = savedData.name;
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'textarea-description');
-  $textAreaDescription.textContent = savedData.description;
+  // $textAreaDescription.textContent = savedData.description;
 
   return $myPlacesImage;
 };
