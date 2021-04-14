@@ -1,3 +1,96 @@
 body {
   font-family: 'Jaldi', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-around;
+
+  /* padding-left: 3rem; */
+  background-color: #fff;
+}
+
+.header-search-icon {
+  cursor: pointer;
+  margin-top: 1.3rem;
+
+  /* margin-left: 3rem; */
+  font-size: 1.5rem;
+}
+
+.home-header,
+.header-h2,
+.greeting-h2 {
+  color: #ff4a2a;
+}
+
+.greeting {
+  margin-left: 3rem;
+}
+
+.home-image {
+  display: flex;
+  justify-content: center;
+}
+
+.home-img {
+  width: 95%;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.home-two-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-first-btn button {
+  display: flex;
+}
+
+.home-first-btn button,
+.home-second-btn button {
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #ff4a2a;
+  color: #f1f1f1;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.home-first-btn,
+.home-second-btn {
+  margin-bottom: 2rem;
+}
+
+.home-btn-search-icon {
+  margin-right: 1rem;
+}
+
+.home-first-btn button:hover,
+.home-second-btn button:hover {
+  background-color: #f52f28;
+}
+
+.home-first-btn button:focus,
+.home-second-btn button:focus {
+  outline: none;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.2rem;
+  padding: 0.8rem 0;
+  background-color: #fff;
+  color: #d2cdc9;
+}
+
+.footer-home-icon {
+  color: #ff4a2a;
 }
