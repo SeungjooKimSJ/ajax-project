@@ -15,6 +15,7 @@ var $homeFirstBtn = document.querySelector('.home-first-btn');
 $headerSearchIcon.addEventListener('click', showSearchPage);
 $homeFirstBtn.addEventListener('click', showSearchPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
+$footerHomeIcon.addEventListener('click', showHomePage);
 
 function showSearchPage(event) {
   $homeHeader.className = 'home-header hidden';
@@ -26,4 +27,16 @@ function showSearchPage(event) {
   $searchHeader.className = 'search-header';
   $searchH2andImg.className = 'search-h2-and-img';
   $footerPlusIcon.className = 'footer-plus-icon on';
+}
+
+function showHomePage(event) {
+  $searchHeader.className = 'search-header hidden';
+  $searchH2andImg.className = 'search-h2-and-img hidden';
+  $footerPlusIcon.className = 'footer-plus-icon';
+  $footerAlbumIcon.className = 'footer-album-icon';
+
+  $homeHeader.className = 'home-header';
+  $homeH2andImg.className = 'home-h2-and-img';
+  $homeTwoBtns.className = 'home-two-btns';
+  $footerHomeIcon.className = 'footer-home-icon on';
 }
