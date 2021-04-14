@@ -1,17 +1,21 @@
 var $homeHeader = document.querySelector('.home-header');
-var $searchHeader = document.querySelector('.search-header');
-
+var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $homeH2andImg = document.querySelector('.home-h2-and-img');
 var $homeTwoBtns = document.querySelector('.home-two-btns');
-var $searchH2andImg = document.querySelector('.search-h2-and-img');
+var $homeFirstBtn = document.querySelector('.home-first-btn');
+var $homeSecontBtn = document.querySelector('.home-second-btn');
 
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
 var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
-var $headerSearchIcon = document.querySelector('.header-search-icon');
-var $homeFirstBtn = document.querySelector('.home-first-btn');
+var $searchHeader = document.querySelector('.search-header');
 var $formSearchBar = document.querySelector('.search-bar');
+var $searchH2andImg = document.querySelector('.search-h2-and-img');
+
+var $myPlace = document.querySelector('.my-place');
+var $myPlaceUl = document.querySelector('.my-place-ul');
+var $myPlaceLi = document.querySelector('.my-place-li');
 
 var $searchResult = document.querySelector('.search-result');
 var $searchedUl = document.querySelector('.searched-ul');
@@ -22,6 +26,9 @@ $headerSearchIcon.addEventListener('click', showSearchPage);
 $homeFirstBtn.addEventListener('click', showSearchPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
 
+$homeSecontBtn.addEventListener('click', showAlbumPage);
+$footerAlbumIcon.addEventListener('click', showAlbumPage);
+
 $footerHomeIcon.addEventListener('click', showHomePage);
 
 $formSearchBar.addEventListener('submit', retrieveResult);
@@ -30,6 +37,8 @@ function showSearchPage(event) {
   $homeHeader.className = 'home-header hidden';
   $homeH2andImg.className = 'home-h2-and-img hidden';
   $homeTwoBtns.className = 'home-two-btns hidden';
+  $myPlace.className = 'my-place hidden';
+  $myPlaceUl.className = 'my-place-ul hidden';
   $footerHomeIcon.className = 'footer-home-icon';
   $footerAlbumIcon.className = 'footer-album-icon';
 
@@ -41,6 +50,10 @@ function showSearchPage(event) {
 function showHomePage(event) {
   $searchHeader.className = 'search-header hidden';
   $searchH2andImg.className = 'search-h2-and-img hidden';
+  $myPlace.className = 'my-place hidden';
+  $myPlaceUl.className = 'my-place-ul hidden';
+  $searchResult.className = 'search-result hidden';
+  $searchedUl.className = 'searched-ul hidden';
   $footerPlusIcon.className = 'footer-plus-icon';
   $footerAlbumIcon.className = 'footer-album-icon';
 
@@ -50,17 +63,31 @@ function showHomePage(event) {
   $footerHomeIcon.className = 'footer-home-icon on';
 }
 
-// function showAlbumPage(event) {
+function showAlbumPage(event) {
+  $homeH2andImg.className = 'home-h2-and-img hidden';
+  $homeTwoBtns.className = 'home-two-btns hidden';
+  $searchHeader.className = 'search-header hidden';
+  $searchH2andImg.className = 'search-h2-and-img hidden';
+  $searchResult.className = 'search-result hidden';
+  $searchedUl.className = 'searched-ul hidden';
+  $footerHomeIcon.className = 'footer-home-icon';
+  $footerPlusIcon.className = 'footer-plus-icon';
 
-// }
+  $homeHeader.className = 'home-header';
+  $myPlace.className = 'my-place';
+  $myPlaceUl.className = 'my-place-ul';
+  $footerAlbumIcon.className = 'footer-album-icon on';
+}
 
 function searchResultPage(event) {
   $homeHeader.className = 'home-header hidden';
   $homeH2andImg.className = 'home-h2-and-img hidden';
   $homeTwoBtns.className = 'home-two-btns hidden';
+  $searchH2andImg.className = 'search-h2-and-img hidden';
+  $myPlace.className = 'my-place hidden';
+  $myPlaceUl.className = 'my-place-ul hidden';
   $footerHomeIcon.className = 'footer-home-icon';
   $footerAlbumIcon.className = 'footer-album-icon';
-  $searchH2andImg.className = 'search-h2-and-img hidden';
 
   $searchHeader.className = 'search-header';
   $footerPlusIcon.className = 'footer-plus-icon on';
