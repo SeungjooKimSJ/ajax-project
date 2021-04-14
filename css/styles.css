@@ -28,7 +28,7 @@ body {
   color: #ff4a2a;
 }
 
-.greeting {
+.greeting-home {
   margin-left: 3rem;
 }
 
@@ -127,6 +127,19 @@ body {
 
 #input-search::placeholder {
   color: #ff4a2a;
+}
+
+.search-h2-and-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-img-1,
+#search-img-2 {
+  width: 95%;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .hidden {
