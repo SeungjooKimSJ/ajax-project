@@ -11,10 +11,12 @@ var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
 var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $homeFirstBtn = document.querySelector('.home-first-btn');
+var $formSearchBar = document.querySelector('.search-bar');
 
 $headerSearchIcon.addEventListener('click', showSearchPage);
 $homeFirstBtn.addEventListener('click', showSearchPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
+
 $footerHomeIcon.addEventListener('click', showHomePage);
 
 function showSearchPage(event) {
@@ -40,3 +42,33 @@ function showHomePage(event) {
   $homeTwoBtns.className = 'home-two-btns';
   $footerHomeIcon.className = 'footer-home-icon on';
 }
+
+// function showAlbumPage(event) {
+
+// }
+
+function searchResultPage(event) {
+  $homeHeader.className = 'home-header hidden';
+  $homeH2andImg.className = 'home-h2-and-img hidden';
+  $homeTwoBtns.className = 'home-two-btns hidden';
+  $footerHomeIcon.className = 'footer-home-icon';
+  $footerAlbumIcon.className = 'footer-album-icon';
+  $searchH2andImg.className = 'search-h2-and-img hidden';
+
+  $searchHeader.className = 'search-header';
+  $footerPlusIcon.className = 'footer-plus-icon on';
+}
+
+function getSearchResultData(query) {
+  var xhr = new XMLHttpRequest();
+  var url = 'https://api.unsplash.com/search/photos/?client_id=FOyQYe0Rid3QLEMMV75PxVbRJNk-AowlsdW9TTbeo_8&query=' + query;
+
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+    console.log(xhr.status);
+    console.log(xhr.response);
+  });
+  xhr.send();
+}
+getSearchResultData('california');
