@@ -47,17 +47,17 @@ function showHomePage(event) {
 
 // }
 
-function searchResultPage(event) {
-  $homeHeader.className = 'home-header hidden';
-  $homeH2andImg.className = 'home-h2-and-img hidden';
-  $homeTwoBtns.className = 'home-two-btns hidden';
-  $footerHomeIcon.className = 'footer-home-icon';
-  $footerAlbumIcon.className = 'footer-album-icon';
-  $searchH2andImg.className = 'search-h2-and-img hidden';
+// function searchResultPage(event) {
+//   $homeHeader.className = 'home-header hidden';
+//   $homeH2andImg.className = 'home-h2-and-img hidden';
+//   $homeTwoBtns.className = 'home-two-btns hidden';
+//   $footerHomeIcon.className = 'footer-home-icon';
+//   $footerAlbumIcon.className = 'footer-album-icon';
+//   $searchH2andImg.className = 'search-h2-and-img hidden';
 
-  $searchHeader.className = 'search-header';
-  $footerPlusIcon.className = 'footer-plus-icon on';
-}
+//   $searchHeader.className = 'search-header';
+//   $footerPlusIcon.className = 'footer-plus-icon on';
+// }
 
 function getSearchResultData(query) {
   var xhr = new XMLHttpRequest();
@@ -72,3 +72,31 @@ function getSearchResultData(query) {
   xhr.send();
 }
 getSearchResultData('california');
+
+function renderSearchResultPage(name, url) {
+  var $domResultPage = document.createElement('div');
+  $domResultPage.setAttribute('class', 'result-page');
+
+  var $resultH2andAddIcon = document.createElement('div');
+  $resultH2andAddIcon.setAttribute('class', 'result-h2-and-add-icon');
+
+  var $photographerH2 = document.createElement('h2');
+  $photographerH2.setAttribute('class', 'photographer-h2');
+  $photographerH2.textContent = name;
+
+  var $searchedImg = document.createElement('img');
+  $searchedImg.setAttribute('src', url);
+  $searchedImg.setAttribute('class', 'searched-img');
+
+  var $addIconBtn = document.createElement('button');
+  $addIconBtn.setAttribute('class', 'add-icon-btn');
+
+  var $resultPlusIcon = document.createElement('i');
+  $resultPlusIcon.setAttribute('class', 'fas fa-plus');
+
+  $domResultPage.append($resultH2andAddIcon, $searchedImg);
+  $resultH2andAddIcon.append($photographerH2, $addIconBtn);
+  $addIconBtn.appendChild($resultPlusIcon);
+
+  return $domResultPage;
+}
