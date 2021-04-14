@@ -6,7 +6,7 @@ body {
 /* Home Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .home-header,
-.search-page {
+.search-header {
   display: flex;
   justify-content: space-around;
 
@@ -94,10 +94,6 @@ body {
   color: #d2cdc9;
 }
 
-.footer-home-icon {
-  color: #ff4a2a;
-}
-
 /* Search Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .search-bar {
@@ -135,6 +131,10 @@ body {
   align-items: center;
 }
 
+.greeting-search-h2 {
+  color: #ff4a2a;
+}
+
 #search-img-1,
 #search-img-2 {
   width: 95%;
@@ -144,4 +144,8 @@ body {
 
 .hidden {
   display: none;
+}
+
+.on {
+  color: #ff4a2a;
 }
