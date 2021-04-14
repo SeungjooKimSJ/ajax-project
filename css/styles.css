@@ -3,7 +3,10 @@ body {
   background-color: #f0f0f0;
 }
 
-.home-header {
+/* Home Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.home-header,
+.search-page {
   display: flex;
   justify-content: space-around;
 
@@ -93,4 +96,39 @@ body {
 
 .footer-home-icon {
   color: #ff4a2a;
+}
+
+/* Search Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.search-bar {
+  position: relative;
+}
+
+#input-search {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
+  padding: 12px 30px;
+}
+
+.search-icon-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #ff4a2a;
+  border: none;
+}
+
+#input-search::placeholder {
+  color: #ff4a2a;
+}
+
+.hidden {
+  display: none;
 }
