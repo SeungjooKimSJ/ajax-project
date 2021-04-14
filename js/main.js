@@ -13,11 +13,18 @@ var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $homeFirstBtn = document.querySelector('.home-first-btn');
 var $formSearchBar = document.querySelector('.search-bar');
 
+var $searchResult = document.querySelector('.search-result');
+var $searchedUl = document.querySelector('.searched-ul');
+var $searchedLi = document.querySelector('.searched-li');
+var $searchResultH2 = document.querySelector('.search-result-h2');
+
 $headerSearchIcon.addEventListener('click', showSearchPage);
 $homeFirstBtn.addEventListener('click', showSearchPage);
 $footerPlusIcon.addEventListener('click', showSearchPage);
 
 $footerHomeIcon.addEventListener('click', showHomePage);
+
+$formSearchBar.addEventListener('submit', retrieveResult);
 
 function showSearchPage(event) {
   $homeHeader.className = 'home-header hidden';
@@ -47,17 +54,17 @@ function showHomePage(event) {
 
 // }
 
-// function searchResultPage(event) {
-//   $homeHeader.className = 'home-header hidden';
-//   $homeH2andImg.className = 'home-h2-and-img hidden';
-//   $homeTwoBtns.className = 'home-two-btns hidden';
-//   $footerHomeIcon.className = 'footer-home-icon';
-//   $footerAlbumIcon.className = 'footer-album-icon';
-//   $searchH2andImg.className = 'search-h2-and-img hidden';
+function searchResultPage(event) {
+  $homeHeader.className = 'home-header hidden';
+  $homeH2andImg.className = 'home-h2-and-img hidden';
+  $homeTwoBtns.className = 'home-two-btns hidden';
+  $footerHomeIcon.className = 'footer-home-icon';
+  $footerAlbumIcon.className = 'footer-album-icon';
+  $searchH2andImg.className = 'search-h2-and-img hidden';
 
-//   $searchHeader.className = 'search-header';
-//   $footerPlusIcon.className = 'footer-plus-icon on';
-// }
+  $searchHeader.className = 'search-header';
+  $footerPlusIcon.className = 'footer-plus-icon on';
+}
 
 function getSearchResultData(query) {
   var xhr = new XMLHttpRequest();
@@ -68,10 +75,26 @@ function getSearchResultData(query) {
   xhr.addEventListener('load', function () {
     console.log(xhr.status);
     console.log(xhr.response);
+
+    var dataResult = xhr.response.results;
+
+    $searchResult.className = 'search-result';
+    $searchedUl.className = 'searched-ul';
+
+    searchResultPage(event);
+
+    for (var i = 0; i < dataResult.length; i++) {
+      var eachResult = dataResult[i];
+
+      var url = eachResult.urls.raw;
+      var name = eachResult.user.name;
+
+      var domTree = renderSearchResultPage(name, url);
+      $searchedLi.appendChild(domTree);
+    }
   });
   xhr.send();
 }
-getSearchResultData('california');
 
 function renderSearchResultPage(name, url) {
   var $domResultPage = document.createElement('div');
@@ -99,4 +122,15 @@ function renderSearchResultPage(name, url) {
   $addIconBtn.appendChild($resultPlusIcon);
 
   return $domResultPage;
+}
+
+function retrieveResult(event) {
+  event.preventDefault();
+
+  var searchTerm = $formSearchBar.elements.search.value;
+  $searchResultH2.textContent = searchTerm;
+
+  getSearchResultData(searchTerm);
+
+  $formSearchBar.reset();
 }
