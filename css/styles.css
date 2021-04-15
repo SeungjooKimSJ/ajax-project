@@ -125,6 +125,11 @@ body {
   color: #ff4a2a;
 }
 
+#input-search:focus {
+  outline: none;
+  color: #ff4a2a;
+}
+
 .search-h2-and-img {
   display: flex;
   flex-direction: column;
@@ -203,6 +208,10 @@ body {
 
 .add-icon-btn:focus {
   outline: none;
+}
+
+.add-icon-btn:active {
+  transform: translateY(0.25rem);
 }
 
 .hidden {

@@ -1,0 +1,18 @@
+@media screen and (min-width: 800px) {
+  .greeting-h2 {
+    margin-left: 10%;
+  }
+
+  .home-img {
+    max-width: 800px;
+  }
+
+  #search-img-1,
+  #search-img-2 {
+    max-width: 500px;
+  }
+
+  .result-page {
+    width: 400px;
+  }
+}
