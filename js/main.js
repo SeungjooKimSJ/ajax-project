@@ -5,78 +5,59 @@ var $homeTwoBtns = document.querySelector('.home-two-btns');
 var $homeFirstBtn = document.querySelector('.home-first-btn');
 var $homeSecontBtn = document.querySelector('.home-second-btn');
 
-var $footerHomeIcon = document.querySelector('.footer-home-icon');
-var $footerPlusIcon = document.querySelector('.footer-plus-icon');
-var $footerAlbumIcon = document.querySelector('.footer-album-icon');
-
 var $searchHeader = document.querySelector('.search-header');
 var $formSearchBar = document.querySelector('.search-bar');
 var $searchH2andImg = document.querySelector('.search-h2-and-img');
 
 var $myPlace = document.querySelector('.my-place');
 var $myPlaceUl = document.querySelector('.my-place-ul');
-var $myPlaceLi = document.querySelector('.my-place-li');
 
 var $searchResult = document.querySelector('.search-result');
 var $searchedUl = document.querySelector('.searched-ul');
 var $searchedLi = document.querySelector('.searched-li');
 var $searchResultH2 = document.querySelector('.search-result-h2');
 
-$headerSearchIcon.addEventListener('click', showSearchPage);
-$homeFirstBtn.addEventListener('click', showSearchPage);
-$footerPlusIcon.addEventListener('click', showSearchPage);
+var $footerHomeIcon = document.querySelector('.footer-home-icon');
+var $footerPlusIcon = document.querySelector('.footer-plus-icon');
+var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
-$homeSecontBtn.addEventListener('click', showAlbumPage);
-$footerAlbumIcon.addEventListener('click', showAlbumPage);
+var $views = document.querySelectorAll('.view');
 
-$footerHomeIcon.addEventListener('click', showHomePage);
+$headerSearchIcon.addEventListener('click', clickChangeDataView);
+$homeFirstBtn.addEventListener('click', clickChangeDataView);
+$footerPlusIcon.addEventListener('click', clickChangeDataView);
+
+$homeSecontBtn.addEventListener('click', clickChangeDataView);
+$footerAlbumIcon.addEventListener('click', clickChangeDataView);
+
+$footerHomeIcon.addEventListener('click', clickChangeDataView);
 
 $formSearchBar.addEventListener('submit', retrieveResult);
 
-function showSearchPage(event) {
-  $homeHeader.className = 'home-header hidden';
-  $homeH2andImg.className = 'home-h2-and-img hidden';
-  $homeTwoBtns.className = 'home-two-btns hidden';
-  $myPlace.className = 'my-place hidden';
-  $myPlaceUl.className = 'my-place-ul hidden';
-  $footerHomeIcon.className = 'footer-home-icon';
-  $footerAlbumIcon.className = 'footer-album-icon';
+function clickChangeDataView(event) {
+  var dataView = event.target.getAttribute('data-view');
 
-  $searchHeader.className = 'search-header';
-  $searchH2andImg.className = 'search-h2-and-img';
-  $footerPlusIcon.className = 'footer-plus-icon on';
-}
+  for (var k = 0; k < $views.length; k++) {
+    if ($views[k].getAttribute('data-view') !== dataView) {
+      $views[k].classList.add('hidden');
+    } else {
+      $views[k].classList.remove('hidden');
+    }
+  }
 
-function showHomePage(event) {
-  $searchHeader.className = 'search-header hidden';
-  $searchH2andImg.className = 'search-h2-and-img hidden';
-  $myPlace.className = 'my-place hidden';
-  $myPlaceUl.className = 'my-place-ul hidden';
-  $searchResult.className = 'search-result hidden';
-  $searchedUl.className = 'searched-ul hidden';
-  $footerPlusIcon.className = 'footer-plus-icon';
-  $footerAlbumIcon.className = 'footer-album-icon';
-
-  $homeHeader.className = 'home-header';
-  $homeH2andImg.className = 'home-h2-and-img';
-  $homeTwoBtns.className = 'home-two-btns';
-  $footerHomeIcon.className = 'footer-home-icon on';
-}
-
-function showAlbumPage(event) {
-  $homeH2andImg.className = 'home-h2-and-img hidden';
-  $homeTwoBtns.className = 'home-two-btns hidden';
-  $searchHeader.className = 'search-header hidden';
-  $searchH2andImg.className = 'search-h2-and-img hidden';
-  $searchResult.className = 'search-result hidden';
-  $searchedUl.className = 'searched-ul hidden';
-  $footerHomeIcon.className = 'footer-home-icon';
-  $footerPlusIcon.className = 'footer-plus-icon';
-
-  $homeHeader.className = 'home-header';
-  $myPlace.className = 'my-place';
-  $myPlaceUl.className = 'my-place-ul';
-  $footerAlbumIcon.className = 'footer-album-icon on';
+  if (dataView === 'home-page') {
+    $footerHomeIcon.className = 'footer-home-icon on';
+    $footerPlusIcon.className = 'footer-plus-icon';
+    $footerAlbumIcon.className = 'footer-album-icon';
+  } else if (dataView === 'search-page') {
+    $footerPlusIcon.className = 'footer-plus-icon on';
+    $footerHomeIcon.className = 'footer-home-icon';
+    $footerAlbumIcon.className = 'footer-album-icon';
+  } else if (dataView === 'album-page') {
+    $footerAlbumIcon.className = 'footer-album-icon on';
+    $footerHomeIcon.className = 'footer-home-icon';
+    $footerPlusIcon.className = 'footer-plus-icon';
+  }
 }
 
 function searchResultPage(event) {
@@ -100,9 +81,6 @@ function getSearchResultData(query) {
   xhr.open('GET', url);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    console.log(xhr.status);
-    console.log(xhr.response);
-
     var dataResult = xhr.response.results;
 
     $searchResult.className = 'search-result';

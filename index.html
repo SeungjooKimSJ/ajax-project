@@ -15,20 +15,20 @@
 
 <body>
   <header>
-    <div class="home-header">
+    <div class="home-header view" data-view= "home-page">
       <h2 class="header-h2">Bucket Places</h2>
       <div class="header-search-icon">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search" data-view="search-page"></i>
       </div>
     </div>
 
-    <div class="search-header hidden">
+    <div class="search-header view hidden" data-view="search-page">
       <form class="search-bar">
         <label for="search">
           <input type="search" name="search"
           id="input-search" placeholder="search bucket places">
           <button class="search-icon-btn">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" data-view="search-result"></i>
           </button>
         </label>
       </form>
@@ -36,7 +36,7 @@
   </header>
 
   <main>
-    <div class="home-h2-and-img">
+    <div class="home-h2-and-img view" data-view="home-page">
       <div class="greeting-home">
         <h2 class="greeting-h2">Welcome, SJ !</h2>
       </div>
@@ -45,21 +45,21 @@
         alt="Daytime-app" class="home-img">
       </div>
     </div>
-    <div class="home-two-btns">
+    <div class="home-two-btns view" data-view="home-page">
       <div class="home-first-btn">
-        <button>
+        <button data-view="search-page">
           <div class="home-btn-search-icon">
             <i class="fas fa-search"></i>
           </div>
           Search Bucket Places
         </button>
       </div>
-      <div class="home-second-btn">
-        <button>To My Places</button>
+      <div class="home-second-btn" data-view="album-page">
+        <button data-view="album-page">To My Places</button>
       </div>
     </div>
 
-    <div class="search-h2-and-img hidden">
+    <div class="search-h2-and-img view hidden" data-view="search-page">
       <div class="greeting-search">
         <h2 class="greeting-search-h2">
           Where are your places
@@ -71,17 +71,17 @@
       alt="Explore-the-world" id="search-img-2">
     </div>
 
-    <div class="my-place hidden">
+    <div class="my-place view hidden" data-view="album-page">
       <h2 class="my-place-h2">My Places</h2>
     </div>
-    <ul class="my-place-ul hidden">
+    <ul class="my-place-ul view hidden" data-view="album-page">
       <li class="my-place-li"></li>
     </ul>
 
-    <div class="search-result hidden">
+    <div class="search-result view hidden" data-view="search-result-page">
       <h2 class="search-result-h2"></h2>
     </div>
-    <ul class="searched-ul hidden">
+    <ul class="searched-ul view hidden" data-view="search-result-page">
       <li class="searched-li"></li>
     </ul>
 
@@ -90,13 +90,13 @@
   <footer>
     <div class="home-footer">
       <div class="footer-home-icon on">
-        <i class="fas fa-home"></i>
+        <i class="fas fa-home" data-view="home-page"></i>
       </div>
       <div class="footer-plus-icon">
-        <i class="fas fa-plus"></i>
+        <i class="fas fa-plus" data-view="search-page"></i>
       </div>
       <div class="footer-album-icon">
-        <i class="fas fa-map-marked-alt"></i>
+        <i class="fas fa-map-marked-alt" data-view="album-page"></i>
       </div>
     </div>
   </footer>
