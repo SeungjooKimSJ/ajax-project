@@ -9,16 +9,12 @@ body {
 .search-header {
   display: flex;
   justify-content: space-around;
-
-  /* padding-left: 3rem; */
   background-color: #fff;
 }
 
 .header-search-icon {
   cursor: pointer;
   margin-top: 1.3rem;
-
-  /* margin-left: 3rem; */
   font-size: 1.5rem;
 }
 
@@ -129,12 +125,7 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   background-color: transparent;
-  color: #ff4a2a;
   border: none;
-}
-
-#input-search::placeholder {
-  color: #ff4a2a;
 }
 
 #input-search:focus {
@@ -148,6 +139,8 @@ body {
   align-items: center;
 }
 
+.search-icon-btn,
+#input-search::placeholder,
 .greeting-search-h2 {
   color: #ff4a2a;
 }
@@ -225,6 +218,8 @@ body {
 .add-icon-btn:active {
   transform: translateY(0.25rem);
 }
+
+/* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .hidden {
   display: none;
