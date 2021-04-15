@@ -77,7 +77,7 @@ body {
 
 .home-first-btn button:hover,
 .home-second-btn button:hover {
-  background-color: #f52f28;
+  background-color: #00203f;
 }
 
 .home-first-btn button:focus,
@@ -92,6 +92,18 @@ body {
   padding: 0.8rem 0;
   background-color: #fff;
   color: #d2cdc9;
+}
+
+.footer-home-icon,
+.footer-plus-icon,
+.footer-album-icon {
+  cursor: pointer;
+}
+
+.footer-home-icon:hover,
+.footer-plus-icon:hover,
+.footer-album-icon:hover {
+  transform: translateY(0.25rem);
 }
 
 /* Search Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */

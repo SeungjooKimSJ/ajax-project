@@ -12,7 +12,14 @@
     max-width: 500px;
   }
 
-  .result-page {
-    width: 400px;
+  .searched-li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .searched-img {
+    max-width: 400px;
   }
 }
