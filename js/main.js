@@ -17,6 +17,8 @@ var $searchedUl = document.querySelector('.searched-ul');
 var $searchedLi = document.querySelector('.searched-li');
 var $searchResultH2 = document.querySelector('.search-result-h2');
 
+var $modalContainer = document.querySelector('.modal-container');
+
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
 var $footerAlbumIcon = document.querySelector('.footer-album-icon');
@@ -121,6 +123,10 @@ function renderSearchResultPage(name, url) {
 
   var $resultPlusIcon = document.createElement('i');
   $resultPlusIcon.setAttribute('class', 'fas fa-plus');
+
+  $addIconBtn.addEventListener('click', function () {
+    $modalContainer.className = 'modal-container';
+  });
 
   $domResultPage.append($resultH2andAddIcon, $searchedImg);
   $resultH2andAddIcon.append($photographerH2, $addIconBtn);
