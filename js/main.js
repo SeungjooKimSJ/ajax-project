@@ -67,6 +67,7 @@ function clickChangeDataView(event) {
     $footerAlbumIcon.className = 'footer-album-icon on';
     $footerHomeIcon.className = 'footer-home-icon';
     $footerPlusIcon.className = 'footer-plus-icon';
+    $homeHeader.className = 'home-header';
   }
 }
 

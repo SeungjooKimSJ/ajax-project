@@ -316,6 +316,17 @@ body {
   background-color: #ff4a2a;
 }
 
+/* Search Result Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.my-place-ul {
+  margin: 0;
+  padding: 0;
+}
+
+.my-place-li {
+  list-style: none;
+}
+
 /* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .hidden {
