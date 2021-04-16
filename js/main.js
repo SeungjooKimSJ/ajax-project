@@ -17,11 +17,17 @@ var $searchedUl = document.querySelector('.searched-ul');
 var $searchedLi = document.querySelector('.searched-li');
 var $searchResultH2 = document.querySelector('.search-result-h2');
 
+var $modalContainer = document.querySelector('.modal-container');
+var $modalForm = document.querySelector('.modal-form');
+var $modalNoBtn = document.querySelector('.modal-no-btn');
+
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
 var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
 var $views = document.querySelectorAll('.view');
+
+var selectedImage;
 
 $headerSearchIcon.addEventListener('click', clickChangeDataView);
 $homeFirstBtn.addEventListener('click', clickChangeDataView);
@@ -33,6 +39,10 @@ $footerAlbumIcon.addEventListener('click', clickChangeDataView);
 $footerHomeIcon.addEventListener('click', clickChangeDataView);
 
 $formSearchBar.addEventListener('submit', retrieveResult);
+
+$modalNoBtn.addEventListener('click', closeModalForm);
+
+$modalForm.addEventListener('submit', submitModalForm);
 
 function clickChangeDataView(event) {
   var dataView = event.target.getAttribute('data-view');
@@ -122,6 +132,15 @@ function renderSearchResultPage(name, url) {
   var $resultPlusIcon = document.createElement('i');
   $resultPlusIcon.setAttribute('class', 'fas fa-plus');
 
+  $addIconBtn.addEventListener('click', function () {
+    $modalContainer.className = 'modal-container';
+
+    selectedImage = {
+      photographerName: name,
+      photoUrl: url
+    };
+  });
+
   $domResultPage.append($resultH2andAddIcon, $searchedImg);
   $resultH2andAddIcon.append($photographerH2, $addIconBtn);
   $addIconBtn.appendChild($resultPlusIcon);
@@ -138,4 +157,25 @@ function retrieveResult(event) {
   getSearchResultData(searchTerm);
 
   $formSearchBar.reset();
+}
+
+function closeModalForm(event) {
+  $modalContainer.className = 'modal-container hidden';
+}
+
+function submitModalForm(event) {
+  event.preventDefault();
+
+  var savedImageInfo = {
+    name: $modalForm.elements.name.value,
+    description: $modalForm.elements.description.value
+  };
+
+  savedImageInfo.imageInfo = selectedImage;
+
+  // eslint-disable-next-line no-undef
+  savedData.push(savedImageInfo);
+
+  $modalForm.reset();
+  $modalContainer.className = 'modal-container hidden';
 }

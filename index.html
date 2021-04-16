@@ -85,6 +85,31 @@
       <li class="searched-li"></li>
     </ul>
 
+    <div class="modal-container hidden">
+      <form class="modal-form">
+        <div class="modal-h2-and-btn">
+          <h2 class="modal-h2">Add to My Places</h2>
+          <button type="submit" class="modal-no-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-labels">
+          <label for="name" class="modal-name">Name</label>
+          <input required type="text" name="name"
+          placeholder="Place name" id="picture-name">
+          <label for="description" class="modal-description">Description</label>
+          <textarea required type="text" name="description"
+          placeholder="Describe the place" id="picture-description"
+          cols="30" rows="10"></textarea>
+        </div>
+        <div class="modal-form-save">
+          <button type="submit" class="modal-add-btn">
+            Add this place
+          </button>
+        </div>
+      </form>
+    </div>
+
   </main>
 
   <footer>
