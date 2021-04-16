@@ -145,3 +145,5 @@ function retrieveResult(event) {
 
   $formSearchBar.reset();
 }
+
+// console.log('checking');
