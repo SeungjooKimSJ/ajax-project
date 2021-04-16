@@ -136,8 +136,8 @@ function renderSearchResultPage(name, url) {
     $modalContainer.className = 'modal-container';
 
     selectedImage = {
-      name: name,
-      url: url
+      photographerName: name,
+      photoUrl: url
     };
   });
 
@@ -173,6 +173,7 @@ function submitModalForm(event) {
 
   savedImageInfo.imageInfo = selectedImage;
 
+  // eslint-disable-next-line no-undef
   savedData.push(savedImageInfo);
 
   $modalForm.reset();
