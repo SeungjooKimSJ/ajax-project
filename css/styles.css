@@ -209,6 +209,7 @@ body {
 
 .add-icon-btn:hover {
   background-color: #ff4a2a;
+  transform: translateY(0.25rem);
 }
 
 .add-icon-btn:focus {
@@ -223,24 +224,95 @@ body {
 
 .modal-container {
   position: fixed;
-  top: 20%;
-  left: 10%;
+  top: 21%;
+  left: 13%;
 }
 
 .modal-form {
   background-color: #fff;
-  border: 1px solid #ff4a2a;
+  border: 1px solid #fff;
+  padding: 5px 20px 20px;
 }
 
 .modal-h2-and-btn {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.modal-no-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-no-btn > .fas {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.7s ease-in-out;
 }
 
 .modal-labels {
   display: flex;
   flex-direction: column;
+}
+
+.modal-form-save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-name,
+.modal-description {
+  font-weight: 700;
+}
+
+#picture-name,
+#picture-description {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-shadow: 5px 5px 10px #d2cdc9;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+#picture-name::placeholder,
+#picture-description::placeholder {
+  color: #00203f;
+}
+
+.modal-add-btn {
+  background-color: #00203f;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.modal-h2-and-btn,
+.modal-no-btn > .fas,
+.modal-labels {
+  color: #00203f;
+}
+
+.modal-no-btn > .fas:hover {
+  color: #ff4a2a;
+  transform: translateY(0.25rem);
+}
+
+#picture-name:focus,
+#picture-description:focus,
+.modal-no-btn > .fas:focus,
+.modal-add-btn:focus {
+  outline: none;
+}
+
+.modal-add-btn:hover {
+  background-color: #ff4a2a;
 }
 
 /* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
