@@ -18,6 +18,8 @@ var $searchedLi = document.querySelector('.searched-li');
 var $searchResultH2 = document.querySelector('.search-result-h2');
 
 var $modalContainer = document.querySelector('.modal-container');
+var $modalForm = document.querySelector('.modal-form');
+var $modalNoBtn = document.querySelector('.modal-no-btn');
 
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
@@ -35,6 +37,10 @@ $footerAlbumIcon.addEventListener('click', clickChangeDataView);
 $footerHomeIcon.addEventListener('click', clickChangeDataView);
 
 $formSearchBar.addEventListener('submit', retrieveResult);
+
+$modalNoBtn.addEventListener('click', closeModalForm);
+
+$modalForm.addEventListener('submit', submitModalForm);
 
 function clickChangeDataView(event) {
   var dataView = event.target.getAttribute('data-view');
@@ -146,4 +152,13 @@ function retrieveResult(event) {
   $formSearchBar.reset();
 }
 
-// console.log('checking');
+function closeModalForm(event) {
+  $modalContainer.className = 'modal-container hidden';
+}
+
+function submitModalForm(event) {
+  event.preventDefault();
+
+  $modalForm.reset();
+  $modalContainer.className = 'modal-container hidden';
+}
