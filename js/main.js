@@ -27,6 +27,8 @@ var $footerAlbumIcon = document.querySelector('.footer-album-icon');
 
 var $views = document.querySelectorAll('.view');
 
+var selectedImage;
+
 $headerSearchIcon.addEventListener('click', clickChangeDataView);
 $homeFirstBtn.addEventListener('click', clickChangeDataView);
 $footerPlusIcon.addEventListener('click', clickChangeDataView);
@@ -132,6 +134,11 @@ function renderSearchResultPage(name, url) {
 
   $addIconBtn.addEventListener('click', function () {
     $modalContainer.className = 'modal-container';
+
+    selectedImage = {
+      name: name,
+      url: url
+    };
   });
 
   $domResultPage.append($resultH2andAddIcon, $searchedImg);
@@ -158,6 +165,15 @@ function closeModalForm(event) {
 
 function submitModalForm(event) {
   event.preventDefault();
+
+  var savedImageInfo = {
+    name: $modalForm.elements.name.value,
+    description: $modalForm.elements.description.value
+  };
+
+  savedImageInfo.imageInfo = selectedImage;
+
+  savedData.push(savedImageInfo);
 
   $modalForm.reset();
   $modalContainer.className = 'modal-container hidden';
