@@ -219,6 +219,30 @@ body {
   transform: translateY(0.25rem);
 }
 
+/* Search Result Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.modal-container {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
+.modal-form {
+  background-color: #fff;
+  border: 1px solid #ff4a2a;
+}
+
+.modal-h2-and-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal-labels {
+  display: flex;
+  flex-direction: column;
+}
+
 /* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .hidden {
