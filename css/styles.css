@@ -225,13 +225,16 @@ body {
 .modal-container {
   position: fixed;
   top: 21%;
-  left: 13%;
+  left: 7%;
+  width: 85vw;
 }
 
 .modal-form {
   background-color: #fff;
   border: 1px solid #fff;
   padding: 5px 20px 20px;
+
+  /* max-width: 550px; */
 }
 
 .modal-h2-and-btn {
