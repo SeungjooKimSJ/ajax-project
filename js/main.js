@@ -65,10 +65,14 @@ function clickChangeDataView(event) {
     $footerHomeIcon.className = 'footer-home-icon';
     $footerAlbumIcon.className = 'footer-album-icon';
   } else if (dataView === 'album-page') {
+    $homeHeader.className = 'home-header';
     $footerAlbumIcon.className = 'footer-album-icon on';
     $footerHomeIcon.className = 'footer-home-icon';
     $footerPlusIcon.className = 'footer-plus-icon';
-    $homeHeader.className = 'home-header';
+
+    var renderMyPlace = renderMyPlacesPage();
+
+    $myPlaceLi.appendChild(renderMyPlace);
   }
 }
 
@@ -182,7 +186,7 @@ function submitModalForm(event) {
   $modalContainer.className = 'modal-container hidden';
 }
 
-function renderMyPlacesPage(event) {
+function renderMyPlacesPage() {
   var $domMyPlace = document.createElement('div');
   $domMyPlace.setAttribute('class', 'my-place-page');
 
@@ -195,6 +199,7 @@ function renderMyPlacesPage(event) {
 
   var $labelName = document.createElement('label');
   $labelName.setAttribute('class', 'saved-img-name');
+  $labelName.textContent = 'Name';
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-img-name');
@@ -202,6 +207,7 @@ function renderMyPlacesPage(event) {
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
+  $labelDescription.textContent = 'Description';
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'text-description');
