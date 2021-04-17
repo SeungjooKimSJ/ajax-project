@@ -11,6 +11,7 @@ var $searchH2andImg = document.querySelector('.search-h2-and-img');
 
 var $myPlace = document.querySelector('.my-place');
 var $myPlaceUl = document.querySelector('.my-place-ul');
+var $myPlaceLi = document.querySelector('.my-place-li');
 
 var $searchResult = document.querySelector('.search-result');
 var $searchedUl = document.querySelector('.searched-ul');
@@ -179,4 +180,37 @@ function submitModalForm(event) {
 
   $modalForm.reset();
   $modalContainer.className = 'modal-container hidden';
+}
+
+function renderMyPlacesPage(event) {
+  var $domMyPlace = document.createElement('div');
+  $domMyPlace.setAttribute('class', 'my-place-page');
+
+  var $savedImage = document.createElement('img');
+  $savedImage.setAttribute('src', './images/night-sky-and-street-with-stars.jpg');
+  $savedImage.setAttribute('class', 'saved-img');
+
+  var $savedInfo = document.createElement('div');
+  $savedInfo.setAttribute('class', 'saved-info');
+
+  var $labelName = document.createElement('label');
+  $labelName.setAttribute('class', 'saved-img-name');
+
+  var $inputName = document.createElement('input');
+  $inputName.setAttribute('class', 'input-img-name');
+  $inputName.textContent = 'Street night view';
+
+  var $labelDescription = document.createElement('label');
+  $labelDescription.setAttribute('class', 'saved-img-description');
+
+  var $textAreaDescription = document.createElement('textarea');
+  $textAreaDescription.setAttribute('class', 'text-description');
+  $textAreaDescription.textContent = 'Lavender night sky with many stars!';
+
+  $domMyPlace.append($savedImage, $savedInfo);
+  $savedInfo.append($labelName, $labelDescription);
+  $labelName.appendChild($inputName);
+  $labelDescription.appendChild($textAreaDescription);
+
+  return $domMyPlace;
 }
