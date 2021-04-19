@@ -203,7 +203,7 @@ function renderMyPlacesPage() {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-img-name');
-  $inputName.textContent = 'Street night view';
+  $inputName.setAttribute('placeholder', 'Street night view');
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
@@ -214,9 +214,9 @@ function renderMyPlacesPage() {
   $textAreaDescription.textContent = 'Lavender night sky with many stars!';
 
   $domMyPlace.append($savedImage, $savedInfo);
-  $savedInfo.append($labelName, $labelDescription);
-  $labelName.appendChild($inputName);
-  $labelDescription.appendChild($textAreaDescription);
+  $savedInfo.append($labelName, $inputName, $labelDescription, $textAreaDescription);
+  // $labelName.appendChild($inputName);
+  // $labelDescription.appendChild($textAreaDescription);
 
   return $domMyPlace;
 }

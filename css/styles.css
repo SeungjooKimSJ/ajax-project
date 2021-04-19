@@ -318,6 +318,15 @@ body {
 
 /* Search Result Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
+.my-place {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.my-place-h2 {
+  color: #ff4a2a;
+}
+
 .my-place-ul {
   margin: 0;
   padding: 0;
@@ -325,6 +334,47 @@ body {
 
 .my-place-li {
   list-style: none;
+}
+
+.my-place-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.saved-img {
+  width: 95%;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.saved-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.input-img-name {
+  margin-bottom: 10px;
+}
+
+.text-description {
+  margin-bottom: 20px;
+}
+
+.saved-img-name,
+.saved-img-description,
+.input-img-name,
+.text-description {
+  padding: 4px;
+  color: #00203f;
+}
+
+.input-img-name,
+.text-description {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #d2cdc9;
 }
 
 /* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
