@@ -207,9 +207,9 @@ function renderMyPlacesPage(name, url, description) {
   var $savedInfo = document.createElement('div');
   $savedInfo.setAttribute('class', 'saved-info');
 
-  var $labelName = document.createElement('label');
-  $labelName.setAttribute('class', 'saved-img-name');
-  $labelName.textContent = 'Name';
+  var $savedNameH3 = document.createElement('h3');
+  $savedNameH3.setAttribute('class', 'saved-name-h3');
+  $savedNameH3.textContent = 'Name';
 
   var $editBtn = document.createElement('button');
   $editBtn.setAttribute('class', 'edit-btn');
@@ -218,22 +218,22 @@ function renderMyPlacesPage(name, url, description) {
   $editIcon.setAttribute('class', 'edit-icon');
   $editIcon.setAttribute('class', 'fas fa-edit');
 
-  var $inputName = document.createElement('input');
-  $inputName.setAttribute('class', 'input-img-name');
-  $inputName.setAttribute('placeholder', name);
+  var $savedNameP = document.createElement('p');
+  $savedNameP.setAttribute('class', 'saved-name-p');
+  $savedNameP.textContent = name;
 
-  var $labelDescription = document.createElement('label');
-  $labelDescription.setAttribute('class', 'saved-img-description');
-  $labelDescription.textContent = 'Description';
+  var $savedDescriptionH3 = document.createElement('h3');
+  $savedDescriptionH3.setAttribute('class', 'saved-description-h3');
+  $savedDescriptionH3.textContent = 'Description';
 
-  var $textAreaDescription = document.createElement('textarea');
-  $textAreaDescription.setAttribute('class', 'text-description');
-  $textAreaDescription.textContent = description;
+  var $savedDescriptionP = document.createElement('p');
+  $savedDescriptionP.setAttribute('class', 'saved-description-p');
+  $savedDescriptionP.textContent = description;
 
   $domMyPlace.append($savedImage, $savedInfo);
-  $labelName.appendChild($editBtn);
+  $savedNameH3.appendChild($editBtn);
   $editBtn.appendChild($editIcon);
-  $savedInfo.append($labelName, $inputName, $labelDescription, $textAreaDescription);
+  $savedInfo.append($savedNameH3, $savedNameP, $savedDescriptionH3, $savedDescriptionP);
 
   return $domMyPlace;
 }

@@ -356,7 +356,7 @@ body {
   width: 80%;
 }
 
-.saved-img-name {
+.saved-name-h3 {
   display: flex;
   justify-content: space-between;
 }
@@ -369,28 +369,29 @@ body {
   color: #00203f;
 }
 
-.input-img-name {
-  margin-bottom: 0.5rem;
-}
-
-.text-description {
-  margin-bottom: 2rem;
-}
-
-.saved-img-name,
-.saved-img-description,
-.input-img-name,
-.text-description,
-.input-img-name::placeholder {
+.saved-name-h3,
+.saved-name-p,
+.saved-description-h3,
+.saved-description-p {
   padding: 4px;
   color: #00203f;
+  margin: 0;
 }
 
-.input-img-name,
-.text-description {
+.saved-name-p,
+.saved-description-p {
   border: none;
   border-radius: 5px;
   box-shadow: 5px 5px 10px #d2cdc9;
+  background-color: #fff;
+}
+
+.saved-name-p {
+  margin-bottom: 1rem;
+}
+
+.saved-description-p {
+  margin-bottom: 2rem;
 }
 
 /* hidden and on class !!!!!!!!!!!!!!!!!!!!!!!!!! */
