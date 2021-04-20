@@ -275,6 +275,7 @@ body {
   box-shadow: 5px 5px 10px #d2cdc9;
   border: 1px solid #fff;
   border-radius: 5px;
+  color: #00203f;
 }
 
 #picture-name::placeholder,

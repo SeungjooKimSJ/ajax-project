@@ -12,14 +12,16 @@
     max-width: 500px;
   }
 
-  .searched-li {
+  .searched-li,
+  .my-place-li {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
-  .searched-img {
+  .searched-img,
+  .my-place-page {
     max-width: 400px;
   }
 }
