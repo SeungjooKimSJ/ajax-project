@@ -121,7 +121,7 @@ body {
 .search-icon-btn {
   position: absolute;
   top: 2rem;
-  right: 1.5rem;
+  right: 3.3rem;
   font-size: 1.2rem;
   cursor: pointer;
   background-color: transparent;
@@ -352,6 +352,19 @@ body {
   display: flex;
   flex-direction: column;
   width: 80%;
+}
+
+.saved-img-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  color: #00203f;
 }
 
 .input-img-name {

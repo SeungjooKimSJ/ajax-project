@@ -211,6 +211,13 @@ function renderMyPlacesPage(name, url, description) {
   $labelName.setAttribute('class', 'saved-img-name');
   $labelName.textContent = 'Name';
 
+  var $editBtn = document.createElement('button');
+  $editBtn.setAttribute('class', 'edit-btn');
+
+  var $editIcon = document.createElement('i');
+  $editIcon.setAttribute('class', 'edit-icon');
+  $editIcon.setAttribute('class', 'fas fa-edit');
+
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-img-name');
   $inputName.setAttribute('placeholder', name);
@@ -224,6 +231,8 @@ function renderMyPlacesPage(name, url, description) {
   $textAreaDescription.textContent = description;
 
   $domMyPlace.append($savedImage, $savedInfo);
+  $labelName.appendChild($editBtn);
+  $editBtn.appendChild($editIcon);
   $savedInfo.append($labelName, $inputName, $labelDescription, $textAreaDescription);
 
   return $domMyPlace;
