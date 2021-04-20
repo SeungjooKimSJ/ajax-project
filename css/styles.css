@@ -355,17 +355,18 @@ body {
 }
 
 .input-img-name {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .text-description {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .saved-img-name,
 .saved-img-description,
 .input-img-name,
-.text-description {
+.text-description,
+.input-img-name::placeholder {
   padding: 4px;
   color: #00203f;
 }

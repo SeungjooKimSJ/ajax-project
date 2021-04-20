@@ -70,9 +70,19 @@ function clickChangeDataView(event) {
     $footerHomeIcon.className = 'footer-home-icon';
     $footerPlusIcon.className = 'footer-plus-icon';
 
-    var renderMyPlace = renderMyPlacesPage();
+    // eslint-disable-next-line no-undef
+    for (var i = 0; i < savedData.length; i++) {
+      // eslint-disable-next-line no-undef
+      var eachSavedData = savedData[i];
 
-    $myPlaceLi.appendChild(renderMyPlace);
+      var url = eachSavedData.imageInfo.photoUrl;
+      var name = eachSavedData.name;
+      var description = eachSavedData.description;
+
+      var renderMyPlace = renderMyPlacesPage(name, url, description);
+
+      $myPlaceLi.appendChild(renderMyPlace);
+    }
   }
 }
 
@@ -186,12 +196,12 @@ function submitModalForm(event) {
   $modalContainer.className = 'modal-container hidden';
 }
 
-function renderMyPlacesPage() {
+function renderMyPlacesPage(name, url, description) {
   var $domMyPlace = document.createElement('div');
   $domMyPlace.setAttribute('class', 'my-place-page');
 
   var $savedImage = document.createElement('img');
-  $savedImage.setAttribute('src', './images/night-sky-and-street-with-stars.jpg');
+  $savedImage.setAttribute('src', url);
   $savedImage.setAttribute('class', 'saved-img');
 
   var $savedInfo = document.createElement('div');
@@ -203,7 +213,7 @@ function renderMyPlacesPage() {
 
   var $inputName = document.createElement('input');
   $inputName.setAttribute('class', 'input-img-name');
-  $inputName.setAttribute('placeholder', 'Street night view');
+  $inputName.setAttribute('placeholder', name);
 
   var $labelDescription = document.createElement('label');
   $labelDescription.setAttribute('class', 'saved-img-description');
@@ -211,12 +221,10 @@ function renderMyPlacesPage() {
 
   var $textAreaDescription = document.createElement('textarea');
   $textAreaDescription.setAttribute('class', 'text-description');
-  $textAreaDescription.textContent = 'Lavender night sky with many stars!';
+  $textAreaDescription.textContent = description;
 
   $domMyPlace.append($savedImage, $savedInfo);
   $savedInfo.append($labelName, $inputName, $labelDescription, $textAreaDescription);
-  // $labelName.appendChild($inputName);
-  // $labelDescription.appendChild($textAreaDescription);
 
   return $domMyPlace;
 }
