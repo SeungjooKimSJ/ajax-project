@@ -321,11 +321,12 @@ body {
 
 .my-place {
   display: flex;
-  margin-left: 3rem;
 }
 
 .my-place-h2 {
   color: #ff4a2a;
+  position: relative;
+  left: 15%;
 }
 
 .my-place-ul {
