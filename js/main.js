@@ -11,6 +11,7 @@ var $searchH2andImg = document.querySelector('.search-h2-and-img');
 
 var $myPlace = document.querySelector('.my-place');
 var $myPlaceUl = document.querySelector('.my-place-ul');
+var $myPlaceLi = document.querySelector('.my-place-li');
 
 var $searchResult = document.querySelector('.search-result');
 var $searchedUl = document.querySelector('.searched-ul');
@@ -64,9 +65,25 @@ function clickChangeDataView(event) {
     $footerHomeIcon.className = 'footer-home-icon';
     $footerAlbumIcon.className = 'footer-album-icon';
   } else if (dataView === 'album-page') {
+    $homeHeader.className = 'home-header';
     $footerAlbumIcon.className = 'footer-album-icon on';
     $footerHomeIcon.className = 'footer-home-icon';
     $footerPlusIcon.className = 'footer-plus-icon';
+
+    $myPlaceLi.textContent = '';
+
+    // eslint-disable-next-line no-undef
+    for (var i = 0; i < savedData.length; i++) {
+      // eslint-disable-next-line no-undef
+      var eachSavedData = savedData[i];
+      var url = eachSavedData.imageInfo.photoUrl;
+      var name = eachSavedData.name;
+      var description = eachSavedData.description;
+
+      var renderMyPlace = renderMyPlacesPage(name, url, description);
+
+      $myPlaceLi.appendChild(renderMyPlace);
+    }
   }
 }
 
@@ -178,4 +195,46 @@ function submitModalForm(event) {
 
   $modalForm.reset();
   $modalContainer.className = 'modal-container hidden';
+}
+
+function renderMyPlacesPage(name, url, description) {
+  var $domMyPlace = document.createElement('div');
+  $domMyPlace.setAttribute('class', 'my-place-page');
+
+  var $savedImage = document.createElement('img');
+  $savedImage.setAttribute('src', url);
+  $savedImage.setAttribute('class', 'saved-img');
+
+  var $savedInfo = document.createElement('div');
+  $savedInfo.setAttribute('class', 'saved-info');
+
+  var $savedNameH3 = document.createElement('h3');
+  $savedNameH3.setAttribute('class', 'saved-name-h3');
+  $savedNameH3.textContent = 'Name';
+
+  var $editBtn = document.createElement('button');
+  $editBtn.setAttribute('class', 'edit-btn');
+
+  var $editIcon = document.createElement('i');
+  $editIcon.setAttribute('class', 'edit-icon');
+  $editIcon.setAttribute('class', 'fas fa-edit');
+
+  var $savedNameP = document.createElement('p');
+  $savedNameP.setAttribute('class', 'saved-name-p');
+  $savedNameP.textContent = name;
+
+  var $savedDescriptionH3 = document.createElement('h3');
+  $savedDescriptionH3.setAttribute('class', 'saved-description-h3');
+  $savedDescriptionH3.textContent = 'Description';
+
+  var $savedDescriptionP = document.createElement('p');
+  $savedDescriptionP.setAttribute('class', 'saved-description-p');
+  $savedDescriptionP.textContent = description;
+
+  $domMyPlace.append($savedImage, $savedInfo);
+  $savedNameH3.appendChild($editBtn);
+  $editBtn.appendChild($editIcon);
+  $savedInfo.append($savedNameH3, $savedNameP, $savedDescriptionH3, $savedDescriptionP);
+
+  return $domMyPlace;
 }
