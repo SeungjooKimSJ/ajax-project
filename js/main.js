@@ -231,6 +231,18 @@ function renderMyPlacesPage(name, url, description) {
   $savedDescriptionP.setAttribute('class', 'saved-description-p');
   $savedDescriptionP.textContent = description;
 
+  // $editIcon.addEventListener('click', function (name, description) {
+  //   $modalContainer.className = 'modal-container';
+
+  //   var $modalH2 = document.querySelector('.modal-h2');
+  //   var $modalInputName = document.querySelector('#picture-name');
+  //   var $modalTextDescription = document.querySelector('#picture-description');
+
+  //   $modalH2.textContent = 'Edit My Places';
+  //   $modalInputName.textContent = name;
+  //   $modalTextDescription.textContent = description;
+  // });
+
   $domMyPlace.append($savedImage, $savedInfo);
   $savedNameH3.appendChild($editBtn);
   $editBtn.appendChild($editIcon);
