@@ -70,11 +70,16 @@ function clickChangeDataView(event) {
     $footerHomeIcon.className = 'footer-home-icon';
     $footerPlusIcon.className = 'footer-plus-icon';
 
+    // if myplaceul.length <= savad.length return
+    // eslint-disable-next-line no-undef
+    if ($myPlaceLi.length <= savedData.length) {
+      return;
+    }
+
     // eslint-disable-next-line no-undef
     for (var i = 0; i < savedData.length; i++) {
       // eslint-disable-next-line no-undef
       var eachSavedData = savedData[i];
-
       var url = eachSavedData.imageInfo.photoUrl;
       var name = eachSavedData.name;
       var description = eachSavedData.description;
