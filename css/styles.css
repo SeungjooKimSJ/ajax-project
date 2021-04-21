@@ -222,37 +222,45 @@ body {
 
 /* Search Result Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
 
-.modal-container {
+/* Edit modal form styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.modal-container,
+.edit-modal-container {
   position: fixed;
   top: 21%;
   left: 7%;
   width: 85vw;
 }
 
-.modal-form {
+.modal-form,
+.edit-modal-form {
   background-color: #fff;
   border: 1px solid #fff;
   padding: 5px 20px 20px;
 }
 
-.modal-h2-and-btn {
+.modal-h2-and-btn,
+.edit-modal-h2-and-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.modal-no-btn {
+.modal-no-btn,
+.edit-modal-no-btn {
   background-color: transparent;
   border: none;
 }
 
-.modal-no-btn > .fas {
+.modal-no-btn > .fas,
+.edit-modal-no-btn > .fas {
   cursor: pointer;
   font-size: 1.5rem;
   transition: color 0.7s ease-in-out;
 }
 
-.modal-labels {
+.modal-labels,
+.edit-modal-labels {
   display: flex;
   flex-direction: column;
 }
@@ -262,13 +270,22 @@ body {
   justify-content: flex-end;
 }
 
+.edit-modal-form-save {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal-name,
-.modal-description {
+.modal-description,
+.edit-modal-name,
+.edit-modal-description {
   font-weight: 700;
 }
 
 #picture-name,
-#picture-description {
+#picture-description,
+#edit-name,
+#edit-description {
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 5px;
@@ -283,7 +300,8 @@ body {
   color: #00203f;
 }
 
-.modal-add-btn {
+.modal-add-btn,
+.edit-modal-save-btn {
   background-color: #00203f;
   color: #fff;
   font-size: 1rem;
@@ -295,13 +313,29 @@ body {
   transition: background-color 0.7s ease-in-out;
 }
 
+.edit-modal-delete-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.edit-modal-delete-btn > .fas {
+  transition: color 0.7s ease-in-out;
+}
+
 .modal-h2-and-btn,
 .modal-no-btn > .fas,
-.modal-labels {
+.modal-labels,
+.edit-modal-h2-and-btn,
+.edit-modal-no-btn > .fas,
+.edit-modal-labels,
+.edit-modal-delete-btn > .fas {
   color: #00203f;
 }
 
-.modal-no-btn > .fas:hover {
+.modal-no-btn > .fas:hover,
+.edit-modal-no-btn > .fas:hover,
+.edit-modal-delete-btn > .fas:hover {
   color: #ff4a2a;
   transform: translateY(0.25rem);
 }
@@ -309,11 +343,16 @@ body {
 #picture-name:focus,
 #picture-description:focus,
 .modal-no-btn > .fas:focus,
-.modal-add-btn:focus {
+.modal-add-btn:focus,
+#edit-name:focus,
+#edit-description:focus,
+.edit-modal-no-btn > .fas:focus,
+.edit-modal-save-btn:focus {
   outline: none;
 }
 
-.modal-add-btn:hover {
+.modal-add-btn:hover,
+.edit-modal-save-btn:hover {
   background-color: #ff4a2a;
 }
 
