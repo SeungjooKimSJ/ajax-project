@@ -22,6 +22,10 @@ var $modalContainer = document.querySelector('.modal-container');
 var $modalForm = document.querySelector('.modal-form');
 var $modalNoBtn = document.querySelector('.modal-no-btn');
 
+var $editModalContainer = document.querySelector('.edit-modal-container');
+var $editModalForm = document.querySelector('.edit-modal-form');
+var $editModalNoBtn = document.querySelector('.edit-modal-no-btn');
+
 var $footerHomeIcon = document.querySelector('.footer-home-icon');
 var $footerPlusIcon = document.querySelector('.footer-plus-icon');
 var $footerAlbumIcon = document.querySelector('.footer-album-icon');
@@ -44,6 +48,10 @@ $formSearchBar.addEventListener('submit', retrieveResult);
 $modalNoBtn.addEventListener('click', closeModalForm);
 
 $modalForm.addEventListener('submit', submitModalForm);
+
+$editModalNoBtn.addEventListener('click', closeEditModalForm);
+
+$editModalForm.addEventListener('submit', submitEditModalForm);
 
 function clickChangeDataView(event) {
   var dataView = event.target.getAttribute('data-view');
@@ -231,17 +239,15 @@ function renderMyPlacesPage(name, url, description) {
   $savedDescriptionP.setAttribute('class', 'saved-description-p');
   $savedDescriptionP.textContent = description;
 
-  // $editIcon.addEventListener('click', function (name, description) {
-  //   $modalContainer.className = 'modal-container';
+  $editIcon.addEventListener('click', function () {
+    var $editName = document.querySelector('#edit-name');
+    var $editDescription = document.querySelector('#edit-description');
 
-  //   var $modalH2 = document.querySelector('.modal-h2');
-  //   var $modalInputName = document.querySelector('#picture-name');
-  //   var $modalTextDescription = document.querySelector('#picture-description');
+    $editModalContainer.className = 'edit-modal-container';
 
-  //   $modalH2.textContent = 'Edit My Places';
-  //   $modalInputName.textContent = name;
-  //   $modalTextDescription.textContent = description;
-  // });
+    $editName.textContent = name;
+    $editDescription.textContent = description;
+  });
 
   $domMyPlace.append($savedImage, $savedInfo);
   $savedNameH3.appendChild($editBtn);
@@ -249,4 +255,25 @@ function renderMyPlacesPage(name, url, description) {
   $savedInfo.append($savedNameH3, $savedNameP, $savedDescriptionH3, $savedDescriptionP);
 
   return $domMyPlace;
+}
+
+function submitEditModalForm(event) {
+  event.preventDefault();
+
+  var editSavedImageInfo = {
+    name: $editModalForm.elements.name.value,
+    description: $editModalForm.elements.description.value
+  };
+
+  editSavedImageInfo.imageInfo = selectedImage;
+
+  // eslint-disable-next-line no-undef
+  savedData.push(editSavedImageInfo);
+
+  $editModalForm.reset();
+  $editModalContainer.className = 'edit-modal-container hidden';
+}
+
+function closeEditModalForm(event) {
+  $editModalContainer.className = 'edit-modal-container hidden';
 }
