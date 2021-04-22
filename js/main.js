@@ -272,6 +272,8 @@ function submitEditModalForm(event) {
 
   $editModalForm.reset();
   $editModalContainer.className = 'edit-modal-container hidden';
+  $savedNameP.textContent = name;
+  $savedDescriptionP.textContent = description;
 }
 
 function closeEditModalForm(event) {
