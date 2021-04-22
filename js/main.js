@@ -81,9 +81,9 @@ function clickChangeDataView(event) {
     $myPlaceLi.textContent = '';
 
     // eslint-disable-next-line no-undef
-    for (var i = 0; i < savedData.length; i++) {
+    for (var i = 0; i < savedData.entries.length; i++) {
       // eslint-disable-next-line no-undef
-      var eachSavedData = savedData[i];
+      var eachSavedData = savedData.entries[i];
       var url = eachSavedData.imageInfo.photoUrl;
       var name = eachSavedData.name;
       var description = eachSavedData.description;
@@ -122,6 +122,8 @@ function getSearchResultData(query) {
     $searchedUl.className = 'searched-ul';
 
     searchResultPage(event);
+
+    $searchedLi.textContent = '';
 
     for (var i = 0; i < dataResult.length; i++) {
       var eachResult = dataResult[i];
@@ -199,9 +201,17 @@ function submitModalForm(event) {
   savedImageInfo.imageInfo = selectedImage;
 
   // eslint-disable-next-line no-undef
-  savedData.push(savedImageInfo);
+  var dataNextId = savedData.nextId;
+  savedImageInfo.nextId = dataNextId;
+
+  // eslint-disable-next-line no-undef
+  savedData.nextId++;
+
+  // eslint-disable-next-line no-undef
+  savedData.entries.unshift(savedImageInfo);
 
   $modalForm.reset();
+
   $modalContainer.className = 'modal-container hidden';
 }
 
@@ -272,7 +282,10 @@ function submitEditModalForm(event) {
 
   $editModalForm.reset();
   $editModalContainer.className = 'edit-modal-container hidden';
+
+  // eslint-disable-next-line no-undef
   $savedNameP.textContent = name;
+  // eslint-disable-next-line no-undef
   $savedDescriptionP.textContent = description;
 }
 
