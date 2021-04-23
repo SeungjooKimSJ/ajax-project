@@ -1,3 +1,5 @@
+/* global savedData */
+
 var $homeHeader = document.querySelector('.home-header');
 var $headerSearchIcon = document.querySelector('.header-search-icon');
 var $homeH2andImg = document.querySelector('.home-h2-and-img');
@@ -80,9 +82,7 @@ function clickChangeDataView(event) {
 
     $myPlaceLi.textContent = '';
 
-    // eslint-disable-next-line no-undef
     for (var i = 0; i < savedData.entries.length; i++) {
-      // eslint-disable-next-line no-undef
       var eachSavedData = savedData.entries[i];
       var url = eachSavedData.imageInfo.photoUrl;
       var name = eachSavedData.name;
@@ -127,7 +127,6 @@ function getSearchResultData(query) {
 
     for (var i = 0; i < dataResult.length; i++) {
       var eachResult = dataResult[i];
-
       var url = eachResult.urls.raw;
       var name = eachResult.user.name;
 
@@ -200,14 +199,11 @@ function submitModalForm(event) {
 
   savedImageInfo.imageInfo = selectedImage;
 
-  // eslint-disable-next-line no-undef
   var dataNextId = savedData.nextId;
   savedImageInfo.nextId = dataNextId;
 
-  // eslint-disable-next-line no-undef
   savedData.nextId++;
 
-  // eslint-disable-next-line no-undef
   savedData.entries.unshift(savedImageInfo);
 
   $modalForm.reset();
@@ -277,16 +273,14 @@ function submitEditModalForm(event) {
 
   editSavedImageInfo.imageInfo = selectedImage;
 
-  // eslint-disable-next-line no-undef
-  savedData.push(editSavedImageInfo);
+  // savedData.push(editSavedImageInfo);
 
   $editModalForm.reset();
   $editModalContainer.className = 'edit-modal-container hidden';
 
-  // eslint-disable-next-line no-undef
-  $savedNameP.textContent = name;
-  // eslint-disable-next-line no-undef
-  $savedDescriptionP.textContent = description;
+  // $savedNameP.textContent = name;
+
+  // $savedDescriptionP.textContent = description;
 }
 
 function closeEditModalForm(event) {

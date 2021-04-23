@@ -1,10 +1,10 @@
-/* exported data */
+/* exported savedData */
 
 var savedData = {
-	editing: null,
-	nextId: 1,
-	entries: []
-}
+  editing: null,
+  nextId: 1,
+  entries: []
+};
 
 var previousSavedDataJSON = localStorage.getItem('bucket-place-storage');
 
