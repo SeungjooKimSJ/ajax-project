@@ -87,8 +87,9 @@ function clickChangeDataView(event) {
       var url = eachSavedData.imageInfo.photoUrl;
       var name = eachSavedData.name;
       var description = eachSavedData.description;
+      var dataNextId = eachSavedData.nextId;
 
-      var renderMyPlace = renderMyPlacesPage(name, url, description);
+      var renderMyPlace = renderMyPlacesPage(dataNextId, name, url, description);
 
       $myPlaceLi.appendChild(renderMyPlace);
     }
@@ -211,9 +212,10 @@ function submitModalForm(event) {
   $modalContainer.className = 'modal-container hidden';
 }
 
-function renderMyPlacesPage(name, url, description) {
+function renderMyPlacesPage(dataNextId, name, url, description) {
   var $domMyPlace = document.createElement('div');
   $domMyPlace.setAttribute('class', 'my-place-page');
+  // $domMyPlace.setAttribute('data-entry-id', dataNextId);
 
   var $savedImage = document.createElement('img');
   $savedImage.setAttribute('src', url);
@@ -232,6 +234,7 @@ function renderMyPlacesPage(name, url, description) {
   var $editIcon = document.createElement('i');
   $editIcon.setAttribute('class', 'edit-icon');
   $editIcon.setAttribute('class', 'fas fa-edit');
+  $editIcon.setAttribute('data-entry-id', dataNextId);
 
   var $savedNameP = document.createElement('p');
   $savedNameP.setAttribute('class', 'saved-name-p');
@@ -245,14 +248,51 @@ function renderMyPlacesPage(name, url, description) {
   $savedDescriptionP.setAttribute('class', 'saved-description-p');
   $savedDescriptionP.textContent = description;
 
+  // $editIcon.addEventListener('click', function () {
+  //   var $editName = document.querySelector('#edit-name');
+  //   var $editDescription = document.querySelector('#edit-description');
+
+  //   $editModalContainer.className = 'edit-modal-container';
+
+  //   for (var m = 0; m < savedData.entries.length; m++) {
+  //     var eachData = savedData.entries[m];
+  //     var eachUrl = eachData.imageInfo.photoUrl;
+  //     var eachName = eachData.name;
+  //     var eachDescription = eachData.description;
+  //     var eachNextId = eachData.nextId;
+  //     var dataEntryId = event.target.getAttribute('data-entry-id');
+  //     console.log('eachName:', eachName);
+  //     console.log('eachDescription:', eachDescription)
+  //     console.log('eachNextId:', eachNextId);
+
+  //     if (eachNextId === 3) {
+  //       console.log('hi');
+  //       // $editName.textContent = eachName;
+  //       // $editDescription.textContent = eachDescription;
+  //     }
+  //   }
+
+  //   $editName.textContent = name;
+  //   $editDescription.textContent = description;
+  // });
+
   $editIcon.addEventListener('click', function () {
     var $editName = document.querySelector('#edit-name');
     var $editDescription = document.querySelector('#edit-description');
 
     $editModalContainer.className = 'edit-modal-container';
 
-    $editName.textContent = name;
-    $editDescription.textContent = description;
+    var dataEntryId = event.target.getAttribute('data-entry-id');
+    dataEntryId = parseInt(dataEntryId);
+
+    for (var m = 0; m < savedData.entries.length; m++) {
+      var currentEntry = savedData.entries[m];
+
+      if (currentEntry.nextId === dataEntryId) {
+        $editName.textContent = name;
+        $editDescription.textContent = description;
+      }
+    }
   });
 
   $editModalForm.addEventListener('submit', function () {
