@@ -53,7 +53,7 @@ $modalForm.addEventListener('submit', submitModalForm);
 
 $editModalNoBtn.addEventListener('click', closeEditModalForm);
 
-$editModalForm.addEventListener('submit', submitEditModalForm);
+// $editModalForm.addEventListener('submit', submitEditModalForm);
 
 function clickChangeDataView(event) {
   var dataView = event.target.getAttribute('data-view');
@@ -255,6 +255,26 @@ function renderMyPlacesPage(name, url, description) {
     $editDescription.textContent = description;
   });
 
+  $editModalForm.addEventListener('submit', function () {
+    event.preventDefault();
+
+    var editSavedImageInfo = {
+      name: $editModalForm.elements.name.value,
+      description: $editModalForm.elements.description.value
+    };
+
+    editSavedImageInfo.imageInfo = selectedImage;
+
+    savedData.editing = editSavedImageInfo;
+
+    $editModalForm.reset();
+
+    $editModalContainer.className = 'edit-modal-container hidden';
+
+    $savedNameP.textContent = savedData.editing.name;
+    $savedDescriptionP.textContent = savedData.editing.description;
+  });
+
   $domMyPlace.append($savedImage, $savedInfo);
   $savedNameH3.appendChild($editBtn);
   $editBtn.appendChild($editIcon);
@@ -263,25 +283,26 @@ function renderMyPlacesPage(name, url, description) {
   return $domMyPlace;
 }
 
-function submitEditModalForm(event) {
-  event.preventDefault();
+// function submitEditModalForm(event) {
+//   event.preventDefault();
 
-  var editSavedImageInfo = {
-    name: $editModalForm.elements.name.value,
-    description: $editModalForm.elements.description.value
-  };
+//   var editSavedImageInfo = {
+//     name: $editModalForm.elements.name.value,
+//     description: $editModalForm.elements.description.value
+//   };
 
-  editSavedImageInfo.imageInfo = selectedImage;
+//   editSavedImageInfo.imageInfo = selectedImage;
 
-  // savedData.push(editSavedImageInfo);
+//   // savedData.editing.unshift(editSavedImageInfo);
+//   savedData.editing = editSavedImageInfo;
 
-  $editModalForm.reset();
-  $editModalContainer.className = 'edit-modal-container hidden';
+//   $editModalForm.reset();
+//   $editModalContainer.className = 'edit-modal-container hidden';
 
-  // $savedNameP.textContent = name;
+//   $savedNameP.textContent = savedData.editing.name;
 
-  // $savedDescriptionP.textContent = description;
-}
+//   $savedDescriptionP.textContent = savedData.editing.description;
+// }
 
 function closeEditModalForm(event) {
   $editModalContainer.className = 'edit-modal-container hidden';
