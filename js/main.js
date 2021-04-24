@@ -248,34 +248,6 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
   $savedDescriptionP.setAttribute('class', 'saved-description-p');
   $savedDescriptionP.textContent = description;
 
-  // $editIcon.addEventListener('click', function () {
-  //   var $editName = document.querySelector('#edit-name');
-  //   var $editDescription = document.querySelector('#edit-description');
-
-  //   $editModalContainer.className = 'edit-modal-container';
-
-  //   for (var m = 0; m < savedData.entries.length; m++) {
-  //     var eachData = savedData.entries[m];
-  //     var eachUrl = eachData.imageInfo.photoUrl;
-  //     var eachName = eachData.name;
-  //     var eachDescription = eachData.description;
-  //     var eachNextId = eachData.nextId;
-  //     var dataEntryId = event.target.getAttribute('data-entry-id');
-  //     console.log('eachName:', eachName);
-  //     console.log('eachDescription:', eachDescription)
-  //     console.log('eachNextId:', eachNextId);
-
-  //     if (eachNextId === 3) {
-  //       console.log('hi');
-  //       // $editName.textContent = eachName;
-  //       // $editDescription.textContent = eachDescription;
-  //     }
-  //   }
-
-  //   $editName.textContent = name;
-  //   $editDescription.textContent = description;
-  // });
-
   $editIcon.addEventListener('click', function () {
     var $editName = document.querySelector('#edit-name');
     var $editDescription = document.querySelector('#edit-description');
@@ -289,8 +261,10 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
       var currentEntry = savedData.entries[m];
 
       if (currentEntry.nextId === dataEntryId) {
-        $editName.textContent = name;
-        $editDescription.textContent = description;
+        $editName.value = currentEntry.name;
+        $editDescription.value = currentEntry.description;
+        savedData.editing = currentEntry;
+        console.log('savedData.editing:', savedData.editing);
       }
     }
   });
