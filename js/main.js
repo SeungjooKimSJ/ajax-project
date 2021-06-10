@@ -264,7 +264,7 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
         $editName.value = currentEntry.name;
         $editDescription.value = currentEntry.description;
         savedData.editing = currentEntry;
-        console.log('savedData.editing:', savedData.editing);
+        // console.log('savedData.editing:', savedData.editing);
       }
     }
   });
