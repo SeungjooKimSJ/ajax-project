@@ -85,7 +85,7 @@ body {
   display: flex;
   justify-content: space-around;
   font-size: 2.2rem;
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
   background-color: #fff;
   color: #d2cdc9;
   position: fixed;
@@ -170,7 +170,7 @@ body {
 
 .search-result-h2 {
   color: #ff4a2a;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .result-page:last-child {
-  margin-bottom: 6.5rem;
+  margin-bottom: 6rem;
 }
 
 .result-h2-and-add-icon {
@@ -232,6 +232,11 @@ body {
 
 .add-icon-btn:active {
   transform: translateY(0.25rem);
+}
+
+.result-page:first-child > .result-h2-and-add-icon > .photographer-h2,
+.result-page:first-child > .result-h2-and-add-icon > .add-icon-btn {
+  margin-top: 0.3rem;
 }
 
 /* Search Result Page styling !!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -380,6 +385,7 @@ body {
   color: #ff4a2a;
   position: relative;
   left: 15%;
+  margin: 0.8rem 0;
 }
 
 .my-place-ul {
@@ -398,7 +404,7 @@ body {
 }
 
 .my-place-page:last-child {
-  margin-bottom: 5.3rem;
+  margin-bottom: 5rem;
 }
 
 .saved-img {
