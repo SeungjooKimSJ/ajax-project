@@ -285,6 +285,8 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
 
     $editModalContainer.className = 'edit-modal-container hidden';
 
+    // if ()
+
     $savedNameP.textContent = savedData.editing.name;
     $savedDescriptionP.textContent = savedData.editing.description;
   });
