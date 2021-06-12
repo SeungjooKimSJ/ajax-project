@@ -277,6 +277,8 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
       description: $editModalForm.elements.description.value
     };
 
+    // console.log('editSavedImageInfor:', editSavedImageInfo);
+
     editSavedImageInfo.imageInfo = selectedImage;
 
     savedData.editing = editSavedImageInfo;
