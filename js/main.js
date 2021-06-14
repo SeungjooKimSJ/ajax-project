@@ -281,7 +281,7 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
 
       savedData.editing = editSavedImageInfo;
     }
-    // console.log('checking:', savedData.editing);
+    // console.log('checking:', editSavedImageInfo);
 
     // var editSavedImageInfo = {
     //   name: $editModalForm.elements.name.value,
