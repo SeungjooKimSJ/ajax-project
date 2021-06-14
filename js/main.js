@@ -272,25 +272,34 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
   $editModalForm.addEventListener('submit', function () {
     event.preventDefault();
 
-    var editSavedImageInfo = {
-      name: $editModalForm.elements.name.value,
-      description: $editModalForm.elements.description.value
-    };
+    if (event.target.value === savedData.editing.nextId) {
+      var editSavedImageInfo = {
+        name: $editModalForm.elements.name.value,
+        description: $editModalForm.elements.description.value,
+        id: savedData.editing.nextId
+      };
 
-    // console.log('editSavedImageInfor:', editSavedImageInfo);
+      savedData.editing = editSavedImageInfo;
+    }
+    // console.log('checking:', savedData.editing);
 
-    editSavedImageInfo.imageInfo = selectedImage;
+    // var editSavedImageInfo = {
+    //   name: $editModalForm.elements.name.value,
+    //   description: $editModalForm.elements.description.value
+    // };
 
-    savedData.editing = editSavedImageInfo;
+    // console.log('editSavedImageInfo:', editSavedImageInfo);
+
+    // editSavedImageInfo.imageInfo = selectedImage;
+
+    // savedData.editing = editSavedImageInfo;
 
     $editModalForm.reset();
 
     $editModalContainer.className = 'edit-modal-container hidden';
 
-    // if ()
-
-    $savedNameP.textContent = savedData.editing.name;
-    $savedDescriptionP.textContent = savedData.editing.description;
+    // $savedNameP.textContent = savedData.editing.name;
+    // $savedDescriptionP.textContent = savedData.editing.description;
   });
 
   $domMyPlace.append($savedImage, $savedInfo);
