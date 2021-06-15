@@ -276,12 +276,12 @@ function renderMyPlacesPage(dataNextId, name, url, description) {
       var editSavedImageInfo = {
         name: $editModalForm.elements.name.value,
         description: $editModalForm.elements.description.value,
-        id: savedData.editing.nextId
+        nextId: savedData.editing.nextId
       };
 
       savedData.editing = editSavedImageInfo;
     }
-    // console.log('checking:', editSavedImageInfo);
+    // console.log('checking:', savedData.editing);
 
     // var editSavedImageInfo = {
     //   name: $editModalForm.elements.name.value,
